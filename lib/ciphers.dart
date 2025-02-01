@@ -62,7 +62,7 @@ class CardExample extends StatelessWidget {
                 children: <Widget>[
                   const ListTile(
                     leading: Icon(Icons.album),
-                    title: Text('Vigenère cipher'),
+                    title: Text('Vernam cipher'),
                     subtitle: Text('It is a method of encrypting alphabetic text by using a simple form of polyalphabetic substitution.'),
                   ),
                   Row(
@@ -85,7 +85,7 @@ class CardExample extends StatelessWidget {
                 children: <Widget>[
                   const ListTile(
                     leading: Icon(Icons.album),
-                    title: Text('AES encryption'),
+                    title: Text('The Hill cipher'),
                     subtitle: Text('Advanced Encryption Standard is a specification for the encryption of electronic data established by the U.S. National Institute of Standards and Technology.'),
                     
                   ),
