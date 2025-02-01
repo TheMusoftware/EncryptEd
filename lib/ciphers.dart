@@ -107,14 +107,6 @@ class CardExample extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-              ListTile(
-              leading: Image.network(
-                'https://example.com/caesar_cipher.png',
-                width: 50,
-                height: 50,
-                fit: BoxFit.cover,
-              ),
-              ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
