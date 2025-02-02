@@ -1,52 +1,73 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
-class ScreenLogin extends StatelessWidget {
-  const ScreenLogin({super.key});
+class SigninOrSignupScreen extends StatelessWidget {
+  const SigninOrSignupScreen({super.key});
+
+  Future<void> signInWithGoogle() async {
+    final GoogleSignIn googleSignIn = GoogleSignIn();
+    final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
+
+    if (googleUser == null) {
+      // Kullanıcı giriş yapmayı iptal etti.
+      return;
+    }
+
+    // Burada Firebase Authentication veya başka bir kimlik doğrulama yöntemiyle işlemi tamamlayabilirsiniz.
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Cryptography App'),
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Align(
-              alignment: Alignment(0.0, -0.9),
-              child: Text(
-                'Log in',
-                textDirection: TextDirection.ltr,
-                style: TextStyle(
-                  fontSize: 30,
-                  fontFamily: 'Roboto',
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            children: [
+              const Spacer(flex: 2),
+              Image.asset("assets/logo.png", height: 200),
+              const Spacer(),
+              const SizedBox(height: 300),
+              ElevatedButton(
+                onPressed: () {
+                  // add log in
+                },
+                style: ElevatedButton.styleFrom(
+                  elevation: 0,
+                  foregroundColor: Colors.white,
+                  minimumSize: const Size(double.infinity, 48),
+                  shape: const StadiumBorder(),
+                ),
+                child: const Text("Sign In"),
+              ),
+              const SizedBox(height: 16.0),
+              ElevatedButton(
+                onPressed: () {
+                  // add sign up
+                },
+                style: ElevatedButton.styleFrom(
+                  elevation: 0,
+                  foregroundColor: Colors.white,
+                  minimumSize: const Size(double.infinity, 48),
+                  shape: const StadiumBorder(),
+                ),
+                child: const Text("Sign Up"),
+              ),
+              const SizedBox(height: 16.0),
+              TextButton.icon(
+                onPressed: signInWithGoogle,
+                icon: Image.asset(
+                  "assets/google_logo.png",
+                  height: 24,
+                ),
+                label: const Text("Sign in with Google"),
+                style: TextButton.styleFrom(
+                  minimumSize: const Size(double.infinity, 48),
                 ),
               ),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Gmail',
-              ),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Password',
-              ),
-              obscureText: true,
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, '/home');
-              },
-              child: Text('Register'),
-            ),
-          ],
+              const Spacer(flex: 2),
+            ],
+          ),
         ),
       ),
     );
