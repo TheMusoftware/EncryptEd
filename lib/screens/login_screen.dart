@@ -9,66 +9,66 @@ class SigninOrSignupScreen extends StatelessWidget {
     final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
 
     if (googleUser == null) {
-//cancel login
+     // cancel login via google handle here
       return;
     }
+    // Firebase auth
+  }
 
-//Firebase auth  }
-
-    @override
-    Widget build(BuildContext context) {
-      return Scaffold(
-        body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Column(
-              children: [
-                const Spacer(flex: 2),
-                Image.asset("assets/logo.png", height: 200),
-                const Spacer(),
-                const SizedBox(height: 300),
-                ElevatedButton(
-                  onPressed: () {
-                    // add log in
-                  },
-                  style: ElevatedButton.styleFrom(
-                    elevation: 0,
-                    foregroundColor: Colors.white,
-                    minimumSize: const Size(double.infinity, 48),
-                    shape: const StadiumBorder(),
-                  ),
-                  child: const Text("Sign In"),
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            children: [
+              const Spacer(flex: 2),
+              Image.asset("assets/logo.png", height: 200),
+              const Spacer(),
+              const SizedBox(height: 300),
+              ElevatedButton(
+                onPressed: () {
+                  // add log in
+                },
+                style: ElevatedButton.styleFrom(
+                  elevation: 0,
+                  foregroundColor: Colors.white,
+                  minimumSize: const Size(double.infinity, 48),
+                  shape: const StadiumBorder(),
                 ),
-                const SizedBox(height: 16.0),
-                ElevatedButton(
-                  onPressed: () {
-                    // add sign up
-                  },
-                  style: ElevatedButton.styleFrom(
-                    elevation: 0,
-                    foregroundColor: Colors.white,
-                    minimumSize: const Size(double.infinity, 48),
-                    shape: const StadiumBorder(),
-                  ),
-                  child: const Text("Sign Up"),
+                child: const Text("Sign In"),
+              ),
+              const SizedBox(height: 16.0),
+              ElevatedButton(
+                onPressed: () {
+                  // add sign up
+                },
+                style: ElevatedButton.styleFrom(
+                  elevation: 0,
+                  foregroundColor: Colors.white,
+                  minimumSize: const Size(double.infinity, 48),
+                  shape: const StadiumBorder(),
                 ),
-                const SizedBox(height: 16.0),
-                TextButton.icon(
-                  onPressed: signInWithGoogle,
-                  icon: Image.asset(
-                    "assets/google_logo.png",
-                    height: 24,
-                  ),
-                  label: const Text("Sign in with Google"),
-                  style: TextButton.styleFrom(
-                    minimumSize: const Size(double.infinity, 48),
-                  ),
+                child: const Text("Sign Up"),
+              ),
+              const SizedBox(height: 16.0),
+              TextButton.icon(
+                onPressed: signInWithGoogle,
+                icon: Image.asset(
+                  "assets/google_logo.png",
+                  height: 24,
                 ),
-                const Spacer(flex: 2),
-              ],
-            ),
+                label: const Text("Sign in with Google"),
+                style: TextButton.styleFrom(
+                  minimumSize: const Size(double.infinity, 48),
+                ),
+              ),
+              const Spacer(flex: 2),
+            ],
           ),
         ),
-      );
-    }
+      ),
+    );
   }
+}
