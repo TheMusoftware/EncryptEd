@@ -57,7 +57,7 @@ class CardExample extends StatelessWidget {
               icon: Icons.vpn_key,
               title: 'Caesar Cipher',
               description:
-                  'A method that scrambles a message by shifting its letters.',
+              'A method that scrambles a message by shifting its letters.',
               onTap: () => _navigateToDetails(
                 context,
                 'Caesar Cipher',
@@ -68,7 +68,7 @@ class CardExample extends StatelessWidget {
               icon: Icons.lock,
               title: 'Vernam Cipher',
               description:
-                  'An encryption technique using a polyalphabetic substitution.',
+              'An encryption technique using a polyalphabetic substitution.',
               onTap: () => _navigateToDetails(
                 context,
                 'Vernam Cipher',
@@ -79,7 +79,7 @@ class CardExample extends StatelessWidget {
               icon: Icons.grid_on,
               title: 'Hill Cipher',
               description:
-                  'An encryption method based on matrix multiplication.',
+              'An encryption method based on matrix multiplication.',
               onTap: () => _navigateToDetails(
                 context,
                 'Hill Cipher',
