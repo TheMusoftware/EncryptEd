@@ -5,6 +5,7 @@ class SigninOrSignupScreen extends StatelessWidget {
   const SigninOrSignupScreen({super.key});
 
   Future<void> signInWithGoogle() async {
+
     final GoogleSignIn googleSignIn = GoogleSignIn();
     final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
 
@@ -30,6 +31,8 @@ class SigninOrSignupScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   // add log in
+                  Navigator.pushReplacementNamed(context, '/home');
+
                 },
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
@@ -43,6 +46,7 @@ class SigninOrSignupScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   // add sign up
+                  Navigator.pushReplacementNamed(context, '/home');
                 },
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
@@ -54,7 +58,8 @@ class SigninOrSignupScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16.0),
               TextButton.icon(
-                onPressed: signInWithGoogle,
+                onPressed: /*signInWithGoogle,*/ (){ Navigator.pushReplacementNamed(context, '/home');
+                },
                 icon: Image.asset(
                   "assets/google_logo.png",
                   height: 24,
