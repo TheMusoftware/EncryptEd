@@ -1,27 +1,7 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const CipherApp());
-}
-
-class CipherApp extends StatelessWidget {
-  const CipherApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Ciphers',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const CardExampleApp(),
-    );
-  }
-}
-
-class CardExampleApp extends StatelessWidget {
-  const CardExampleApp({super.key});
+class Ciphers extends StatelessWidget {
+  const Ciphers({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +37,7 @@ class CardExample extends StatelessWidget {
               icon: Icons.vpn_key,
               title: 'Caesar Cipher',
               description:
-              'A method that scrambles a message by shifting its letters.',
+                  'A method that scrambles a message by shifting its letters.',
               onTap: () => _navigateToDetails(
                 context,
                 'Caesar Cipher',
@@ -68,7 +48,7 @@ class CardExample extends StatelessWidget {
               icon: Icons.lock,
               title: 'Vernam Cipher',
               description:
-              'An encryption technique using a polyalphabetic substitution.',
+                  'An encryption technique using a polyalphabetic substitution.',
               onTap: () => _navigateToDetails(
                 context,
                 'Vernam Cipher',
@@ -79,7 +59,7 @@ class CardExample extends StatelessWidget {
               icon: Icons.grid_on,
               title: 'Hill Cipher',
               description:
-              'An encryption method based on matrix multiplication.',
+                  'An encryption method based on matrix multiplication.',
               onTap: () => _navigateToDetails(
                 context,
                 'Hill Cipher',

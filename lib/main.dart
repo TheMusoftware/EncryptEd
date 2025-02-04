@@ -1,4 +1,4 @@
-import 'package:encrypt_ed/screens/ciphers.dart';
+import 'package:encrypt_ed/screens/home_screen.dart';
 import 'package:encrypt_ed/screens/login_screen.dart';
 import 'package:encrypt_ed/screens/opening_screen.dart';
 import 'package:flutter/material.dart';
@@ -21,9 +21,9 @@ class MyApp extends StatelessWidget {
       title: 'Login App',
       initialRoute: '/',
       routes: {
-        '/' : (context) => const OpeningScreen(),
+        '/': (context) => const OpeningScreen(),
         '/login': (context) => const SigninOrSignupScreen(),
-        '/home': (context) => const CardExampleApp(),
+        '/home': (context) => const HomeScreen(),
       },
     );
   }

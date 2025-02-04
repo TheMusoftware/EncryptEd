@@ -35,7 +35,7 @@ class SigninOrSignupScreen extends StatelessWidget {
 
                 },
                 style: ElevatedButton.styleFrom(
-                  elevation: 0,
+                  elevation: 1,
                   foregroundColor: Colors.white,
                   minimumSize: const Size(double.infinity, 48),
                   shape: const StadiumBorder(),
