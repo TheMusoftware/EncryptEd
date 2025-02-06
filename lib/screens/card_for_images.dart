@@ -40,7 +40,7 @@ class CardMap extends StatelessWidget {
                       child: Image.asset("assets/logo.png"),
                     ),
                   ),
-                  SizedBox(height: 20), // Расстояние под карточкой
+                  SizedBox(height: 20), // distance after card
                   Text(
                       "Julius Caesar",
                     style: TextStyle(
@@ -48,7 +48,7 @@ class CardMap extends StatelessWidget {
                       fontSize: 18,
                     ),
                   ),
-                  SizedBox(height: 5), // Расстояние под заголовком
+                  SizedBox(height: 5), // distance after title
                   Text(
                     "Caesar's cipher is one of the earliest encryption techniques, is named after Julius Caesar who used it in his private correspondence. "
                     "It’s a type of substitution cipher where each letter in the plaintext is shifted a certain number of places down or up the alphabet. For instance, with a shift of 3, 'A' becomes 'D', 'B' becomes 'E', and so on. To use it, you decide on the shift number, and then replace each letter in your message using this shift. While simple, "
@@ -58,7 +58,7 @@ class CardMap extends StatelessWidget {
                       fontSize: 14,
                     ),
                   ),
-                  SizedBox(height: 50), // Пространство между карточками
+                  SizedBox(height: 50), // distance between cards
                   Container(
                     width: 300,
                     height: 150,
@@ -79,12 +79,12 @@ class CardMap extends StatelessWidget {
                       child: Row(
                         children: [
                           Image.asset("assets/logo.png"),
-                          SizedBox(width: 10), // Расстояние рядом с логотипом
+                          SizedBox(width: 10), // distance near to logo
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(height: 10), // Расстояние под карточкой
+                  SizedBox(height: 10), // distance after card
                   Text(
                     "Horizontal Card",
                     style: TextStyle(
@@ -92,7 +92,7 @@ class CardMap extends StatelessWidget {
                       fontSize: 18,
                     ),
                   ),
-                  SizedBox(height: 5), // Расстояние под заголовком
+                  SizedBox(height: 5), // distance after title
                   Text(
                     "This is a horizontal card with some description.",
                     style: TextStyle(
