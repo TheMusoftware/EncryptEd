@@ -24,7 +24,7 @@ class CardMap extends StatelessWidget {
                     width: 200,
                     height: 265,
                     decoration: BoxDecoration(
-                      color: Colors.cyan,
+                      color: Color(0xFF0D030E),
                       borderRadius: BorderRadius.circular(15),
                       boxShadow: [
                         BoxShadow(
@@ -37,7 +37,7 @@ class CardMap extends StatelessWidget {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Image.asset("assets/logo.png"),
+                      child: Image.asset("assets/caesar.jpg"),
                     ),
                   ),
                   SizedBox(height: 20), // distance after card
