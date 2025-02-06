@@ -14,73 +14,96 @@ class CardMap extends StatelessWidget {
       ),
       home: Scaffold(
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 200,
-                height: 265,
-                decoration: BoxDecoration(
-                  color: Colors.grey,
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.purple.withOpacity(0.6),
-                      spreadRadius: 3,
-                      blurRadius: 10,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Column(
-                    children: [
-                      Container(
-                        child: Image.asset("assets/logo.png"),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 50), // space between the cards
-              Container(
-                width: 300,
-                height: 150,
-                decoration: BoxDecoration(
-                  color: Colors.grey,
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.purple.withOpacity(0.6),
-                      spreadRadius: 3,
-                      blurRadius: 10,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Row(
-                    children: [
-                      Container(
-                        child: Image.asset("assets/logo.png"),
-                      ),
-                      SizedBox(width: 10),
-                      Expanded(
-                        child: Text(
-                          "Horizontal Card",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                          ),
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 50), // height from the top, distance kinda
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 200,
+                    height: 265,
+                    decoration: BoxDecoration(
+                      color: Colors.cyan,
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.purple.withOpacity(0.6),
+                          spreadRadius: 3,
+                          blurRadius: 10,
+                          offset: Offset(0, 3),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Image.asset("assets/logo.png"),
+                    ),
                   ),
-                ),
+                  SizedBox(height: 20), // Расстояние под карточкой
+                  Text(
+                      "Julius Caesar",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
+                  ),
+                  SizedBox(height: 5), // Расстояние под заголовком
+                  Text(
+                    "Caesar's cipher is one of the earliest encryption techniques, is named after Julius Caesar who used it in his private correspondence. "
+                    "It’s a type of substitution cipher where each letter in the plaintext is shifted a certain number of places down or up the alphabet. For instance, with a shift of 3, 'A' becomes 'D', 'B' becomes 'E', and so on. To use it, you decide on the shift number, and then replace each letter in your message using this shift. While simple, "
+                    "the Caesar Cipher is quite easy to break with modern cryptographic techniques.",
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 14,
+                    ),
+                  ),
+                  SizedBox(height: 50), // Пространство между карточками
+                  Container(
+                    width: 300,
+                    height: 150,
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.purple.withOpacity(0.6),
+                          spreadRadius: 3,
+                          blurRadius: 10,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Row(
+                        children: [
+                          Image.asset("assets/logo.png"),
+                          SizedBox(width: 10), // Расстояние рядом с логотипом
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10), // Расстояние под карточкой
+                  Text(
+                    "Horizontal Card",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
+                  ),
+                  SizedBox(height: 5), // Расстояние под заголовком
+                  Text(
+                    "This is a horizontal card with some description.",
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 14,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
