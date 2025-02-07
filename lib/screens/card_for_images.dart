@@ -48,22 +48,24 @@ class CardMap extends StatelessWidget {
                       fontSize: 18,
                     ),
                   ),
-                  SizedBox(height: 5), // distance after title
-                  Text(
+                  SizedBox(height: 5),// distance after title
+                  Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Text(
                     "Caesar's cipher is one of the earliest encryption techniques, is named after Julius Caesar who used it in his private correspondence. "
-                    "It’s a type of substitution cipher where each letter in the plaintext is shifted a certain number of places down or up the alphabet. For instance, with a shift of 3, 'A' becomes 'D', 'B' becomes 'E', and so on. To use it, you decide on the shift number, and then replace each letter in your message using this shift. While simple, "
-                    "the Caesar Cipher is quite easy to break with modern cryptographic techniques.",
+                    "It’s a type of substitution cipher where each letter in the plaintext is shifted a certain number of places down or up the alphabet. ",
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 14,
                     ),
+                    ),
                   ),
-                  SizedBox(height: 50), // distance between cards
+                  SizedBox(height: 40), // distance between cards
                   Container(
                     width: 300,
                     height: 150,
                     decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: Color(0xFFFFFFFF),
                       borderRadius: BorderRadius.circular(15),
                       boxShadow: [
                         BoxShadow(
@@ -78,29 +80,40 @@ class CardMap extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: Row(
                         children: [
-                          Image.asset("assets/logo.png"),
+                          Image.asset("assets/example_caesar.png"),
                           SizedBox(width: 10), // distance near to logo
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(height: 10), // distance after card
+                  SizedBox(height: 20), // distance after card
                   Text(
-                    "Horizontal Card",
+                    "How does it work",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
                     ),
                   ),
-                  SizedBox(height: 5), // distance after title
-                  Text(
-                    "This is a horizontal card with some description.",
+                  SizedBox(height: 5),// distance after title
+                  Padding(padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Text(
+                    "For instance, with a shift of 3, 'A' becomes 'D', 'B' becomes 'E', and so on. "
+                        "To use it, you decide on the shift number, and then replace each letter in your message using this shift. While simple, "
+                        "the Caesar Cipher is quite easy to break with modern cryptographic techniques.",
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 14,
+
+                      ),
                     ),
-                    textAlign: TextAlign.center,
                   ),
+              SizedBox(height: 20), // distance before button
+              ElevatedButton(
+                onPressed: () {
+                  // Add your button action here
+                },
+                child: Text("Train"),
+              ),
                 ],
               ),
             ),
