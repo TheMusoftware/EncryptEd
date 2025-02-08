@@ -1,3 +1,4 @@
+import 'package:encrypt_ed/screens/card_for_images.dart';
 import 'package:flutter/material.dart';
 
 class Ciphers extends StatelessWidget {
@@ -16,12 +17,17 @@ class CardExample extends StatelessWidget {
   const CardExample({super.key});
 
   void _navigateToDetails(
-      BuildContext context, String title, String description) {
+      BuildContext context, String title, String description, String image, String exampleImage, String details) {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) =>
-            CipherDetailPage(title: title, description: description),
+        builder: (context) => CardMap(
+          title: title,
+          description: description,
+          image: image,
+          exampleImage: exampleImage,
+          details: details,
+        ),
       ),
     );
   }
@@ -37,33 +43,42 @@ class CardExample extends StatelessWidget {
               icon: Icons.vpn_key,
               title: 'Caesar Cipher',
               description:
-                  'A method that scrambles a message by shifting its letters.',
+              'A method that scrambles a message by shifting its letters.',
               onTap: () => _navigateToDetails(
                 context,
                 'Caesar Cipher',
                 'The Caesar cipher is a substitution cipher where each letter in the plaintext is shifted a certain number of places down the alphabet.',
+                'assets/caesar.jpg',
+                'assets/example_caesar.png',
+                'For instance, with a shift of 3, "A" becomes "D", "B" becomes "E", and so on. To use it, you decide on the shift number, and then replace each letter in your message using this shift.',
               ),
             ),
             CipherCard(
               icon: Icons.lock,
               title: 'Vernam Cipher',
               description:
-                  'An encryption technique using a polyalphabetic substitution.',
+              'An encryption technique using a polyalphabetic substitution.',
               onTap: () => _navigateToDetails(
                 context,
                 'Vernam Cipher',
                 'The Vernam cipher, also known as the one-time pad, is an encryption technique that uses a key that is as long as the message itself.',
+                'assets/vernam.jpg',
+                'assets/example_vernam.png',
+                'The Vernam cipher works by XOR-ing each character of the plaintext with the corresponding character of the key. If the key is truly random and never reused, it’s considered unbreakable.',
               ),
             ),
             CipherCard(
               icon: Icons.grid_on,
               title: 'Hill Cipher',
               description:
-                  'An encryption method based on matrix multiplication.',
+              'An encryption method based on matrix multiplication.',
               onTap: () => _navigateToDetails(
                 context,
                 'Hill Cipher',
                 'The Hill cipher uses matrix multiplication to encrypt blocks of text, making it more secure than simple substitution ciphers.',
+                'assets/hill.jpg',
+                'assets/example_hill.png',
+                'The Hill cipher operates by using matrix multiplication to encrypt blocks of letters. The size of the block is determined by the size of the encryption matrix.',
               ),
             ),
           ],
@@ -72,6 +87,7 @@ class CardExample extends StatelessWidget {
     );
   }
 }
+
 
 class CipherCard extends StatelessWidget {
   final IconData icon;
@@ -114,24 +130,3 @@ class CipherCard extends StatelessWidget {
   }
 }
 
-class CipherDetailPage extends StatelessWidget {
-  final String title;
-  final String description;
-
-  const CipherDetailPage({
-    required this.title,
-    required this.description,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Text(description, style: const TextStyle(fontSize: 18)),
-      ),
-    );
-  }
-}
