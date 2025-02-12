@@ -1,6 +1,7 @@
 import 'package:encrypt_ed/screens/home_screen.dart';
 import 'package:encrypt_ed/screens/login_screen.dart';
 import 'package:encrypt_ed/screens/opening_screen.dart';
+import 'package:encrypt_ed/screens/quizScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

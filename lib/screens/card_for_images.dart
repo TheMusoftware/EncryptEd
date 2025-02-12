@@ -1,3 +1,4 @@
+import 'package:encrypt_ed/screens/quizScreen.dart';
 import 'package:flutter/material.dart';
 
 class CardMap extends StatelessWidget {
@@ -46,8 +47,7 @@ class CardMap extends StatelessWidget {
                     child: Expanded(
                       child: Image.asset(
                         image,
-                        fit:
-                            BoxFit.contain, // Resmi sığdırarak taşmayı engeller
+                        fit: BoxFit.contain,
                       ),
                     ),
                   ),
@@ -119,7 +119,13 @@ class CardMap extends StatelessWidget {
                 SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
-                    // Add your button action here
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            Quiz(quizType: title), // Parametreyi geçiyoruz
+                      ),
+                    );
                   },
                   child: Text("Train"),
                 ),
