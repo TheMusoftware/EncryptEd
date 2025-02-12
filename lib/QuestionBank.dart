@@ -23,6 +23,14 @@ class QuestionBank {
       ),
 
       Question(
+        question: 'Which organization initially developed the Vernam Cipher?',
+        options: ['Bell Labs', 'NSA (National Security Agency)', 'IBM (International Business Machines)'
+         'RAND Corporation' ,
+          'Bell Labs'],
+        answer: '0110',
+      ),
+
+      Question(
         question: 'Vernam Cipher is considered secure if?',
         options: ['The key is used more than once', 'The key is longer than the message',
           'The key is a random sequence of bits used only once',
@@ -112,6 +120,11 @@ class QuestionBank {
         question: 'Hill Cipher can be applied to which type of data?',
         options: ['Text', 'Images', 'Audio', 'Any digital data'],
         answer: 'Any digital data',
+      ),
+      Question(
+        question: 'What is the fundamental principle behind the Hill Cipher?',
+        options: ['Linear algebra', 'Number theory', 'Factorization', 'Elliptic curves'],
+        answer: 'Linear algebra',
       ),
       // add more
     ];
