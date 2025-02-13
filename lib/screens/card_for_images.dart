@@ -99,7 +99,7 @@ class CardMap extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 Text(
-                  "How does it work",
+                  "Как работает шифр",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,
@@ -127,7 +127,7 @@ class CardMap extends StatelessWidget {
                       ),
                     );
                   },
-                  child: Text("Train"),
+                  child: Text("Тест"),
                 ),
               ],
             ),

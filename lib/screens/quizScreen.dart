@@ -83,25 +83,70 @@ class _QuizState extends State<Quiz> {
           children: [
             Text(
               'Question ${questionIndex + 1}/${questions.length}',
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white70),
             ),
             SizedBox(height: 20),
             Text(
               questions[questionIndex].question,
-              style: TextStyle(fontSize: 24),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600, color: Colors.white),
             ),
             SizedBox(height: 20),
+
+            // Styled answer options
             ...questions[questionIndex].options.map((option) {
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: ElevatedButton(
-                  onPressed: () => checkAnswer(option),
-                  child: Text(option),
+                child: InkWell(
+                  onTap: () => checkAnswer(option),
+                  borderRadius: BorderRadius.circular(12),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      gradient: LinearGradient(
+                        colors: [Colors.transparent, Colors.purple.withOpacity(0.19)], // Dark gradient
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.transparent, // Soft glow
+                          spreadRadius: 2,
+                          blurRadius: 10,
+                          offset: Offset(4, 4), // Bottom-right shadow
+                        ),
+                        BoxShadow(
+                          color: Colors.transparent, // Inner shadow
+                          spreadRadius: -1,
+                          blurRadius: 10,
+                          offset: Offset(-4, -4), // Top-left shadow
+                        ),
+                      ],
+                      border: Border.all(
+                        color: Colors.purple.withOpacity(0.6), // Border color
+                        width: 2, // Border thickness
+                      ),
+                    ),
+                    padding: EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+                    child: Center(
+                      child: Text(
+                        option,
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white70,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               );
             }).toList(),
-            SizedBox(height: 20),
-            Text('Score: $score', style: TextStyle(fontSize: 18)),
+
+            SizedBox(height: 30),
+            Text(
+              'Score: $score',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white70),
+            ),
           ],
         ),
       ),

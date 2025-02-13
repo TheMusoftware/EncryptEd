@@ -60,13 +60,16 @@ class CardExample extends StatelessWidget {
                   'An encryption technique using a polyalphabetic substitution.',
               onTap: () => _navigateToDetails(
                 context,
-                'Vernam Cipher',
-                'The Vernam cipher, also known as the one-time pad, is an encryption technique that uses a key that is as long as the message itself.',
+                'Шифр Вернама',
+                'Вернам шифр, также известный как одноразовый блокнот (one-time pad), был изобретен Гилбертом Вернамом в 1917 году.',
                 'assets/vernam.jpg',
                 'assets/example_vernam.png',
-                'The Vernam cipher works by XOR-ing each character of the plaintext with the corresponding character of the key. If the key is truly random and never reused, it’s considered unbreakable.',
+                'Шифр Вернама использует операцию XOR для каждого символа открытого текста с соответствующим символом ключа.'
+                'Если ключ действительно случайный и никогда не используется повторно, он считается невзламываемым, также этот метод шифрования отличается своей простотой и '
+                    'абсолютной криптографической стойкостью при правильном применении.',
               ),
             ),
+
             CipherCard(
               icon: Icons.grid_on,
               title: 'Hill Cipher',
