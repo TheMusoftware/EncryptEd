@@ -35,37 +35,30 @@ class _QuizState extends State<Quiz> {
         questions = [];
     }
     buttonColors = List.generate(questions[questionIndex].options.length,
-        (index) => Colors.deepPurpleAccent);
+            (index) => Colors.transparent);
   }
 
-  // Updated checkAnswer function to accept an int (selected answer index)
   void checkAnswer(int selectedAnswerIndex) {
-    int correctAnswerIndex = questions[questionIndex]
-        .answer; // Assuming 'answer' stores the correct answer index
+    int correctAnswerIndex = questions[questionIndex].answer;
 
-    if (selectedAnswerIndex == correctAnswerIndex) {
-      setState(() {
+    setState(() {
+      if (selectedAnswerIndex == correctAnswerIndex) {
         score++;
         buttonColors[selectedAnswerIndex] = Colors.green;
-      });
-    } else {
-      setState(() {
+      } else {
         buttonColors[selectedAnswerIndex] = Colors.red;
         buttonColors[correctAnswerIndex] = Colors.green;
-      });
-    }
+      }
+    });
 
-    // Wait 3 seconds before moving to the next question
     Future.delayed(Duration(seconds: 3), () {
       if (questionIndex < questions.length - 1) {
         setState(() {
           questionIndex++;
-          // Reset button colors for the next question
-          buttonColors = List.generate(
-              questions[questionIndex].options.length, (index) => Colors.blue);
+          buttonColors = List.generate(questions[questionIndex].options.length,
+                  (index) => Colors.transparent);
         });
       } else {
-        // Show result if all questions are answered
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
@@ -81,7 +74,7 @@ class _QuizState extends State<Quiz> {
                   Navigator.pop(context);
                   Navigator.pop(context);
                 },
-                child: Text('Return Main Menu'),
+                child: Text('Return to Main Menu'),
               ),
             ],
           ),
@@ -112,20 +105,43 @@ class _QuizState extends State<Quiz> {
               style: TextStyle(fontSize: 24),
             ),
             SizedBox(height: 20),
+
+            // Кнопки с прозрачным фоном, меняющимся на красный или зеленый при выборе
             ...questions[questionIndex].options.asMap().entries.map((entry) {
               int idx = entry.key;
               String option = entry.value;
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: ElevatedButton(
-                  onPressed: () => checkAnswer(idx),
-                  // Pass the index instead of the answer text
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: buttonColors[idx]),
-                  child: Text(option),
+                child: Container(
+                  width: double.infinity, // Кнопка по всей ширине
+                  decoration: BoxDecoration(
+                    color: buttonColors[idx], // Фон меняется моментально
+                    border: Border.all(color: Colors.deepPurple, width: 2), // Фиолетовая граница
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.transparent,
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: TextButton(
+                    onPressed: () => checkAnswer(idx),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.symmetric(vertical: 15), // Увеличенный размер кнопки
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      foregroundColor: Colors.white, // Цвет текста
+                    ),
+                    child: Text(option, style: TextStyle(fontSize: 18)),
+                  ),
                 ),
               );
             }).toList(),
+
             SizedBox(height: 20),
             Text('Score: $score', style: TextStyle(fontSize: 18)),
           ],
