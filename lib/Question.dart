@@ -1,7 +1,7 @@
 class Question {
   String question;
   List<String> options;
-  String answer;
+  int answer;
 
   Question({
     required this.question,
