@@ -62,8 +62,8 @@ class _QuizState extends State<Quiz> {
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text('Quiz Completed!'),
-            content: Text('Your score is $score/${questions.length}'),
+            title: Text('Тест пройден!'),
+            content: Text('Ваш счет: $score/${questions.length}'),
             actions: [
               TextButton(
                 onPressed: () {
@@ -74,7 +74,7 @@ class _QuizState extends State<Quiz> {
                   Navigator.pop(context);
                   Navigator.pop(context);
                 },
-                child: Text('Return to Main Menu'),
+                child: Text('В меню'),
               ),
             ],
           ),
@@ -87,7 +87,7 @@ class _QuizState extends State<Quiz> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Training'),
+        title: Text('Тест'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -96,7 +96,7 @@ class _QuizState extends State<Quiz> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Question ${questionIndex + 1}/${questions.length}',
+              'Вопрос ${questionIndex + 1}/${questions.length}',
               style: TextStyle(fontSize: 18),
             ),
             SizedBox(height: 20),
@@ -143,7 +143,7 @@ class _QuizState extends State<Quiz> {
             }).toList(),
 
             SizedBox(height: 20),
-            Text('Score: $score', style: TextStyle(fontSize: 18)),
+            Text('Ваш счет: $score', style: TextStyle(fontSize: 18)),
           ],
         ),
       ),
