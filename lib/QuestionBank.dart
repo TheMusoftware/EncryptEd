@@ -1,186 +1,177 @@
 import 'Question.dart';
 
 class QuestionBank {
-  // Vernam
+  // Шифр Вернама
   List<Question> getVernamQuestions() {
     return [
       Question(
-        question: 'Vernam Cipher is also known as?',
+        question: 'Шифр Вернама также известен как?',
         options: [
-          'One-time pad',
-          'Shift cipher',
-          'Block cipher',
-          'Stream cipher'
+          'Одноразовый ключ',
+          'Шифр сдвига',
+          'Блочный шифр',
+          'Потоковый шифр'
         ],
         answer: 0,
       ),
       Question(
-        question: 'What kind of operation is central to the Vernam Cipher?',
-        options: ['Addition', 'Subtraction', 'XOR', 'Modulo'],
+        question: 'Какое математическое действие является центральным для шифра Вернама?',
+        options: ['Сложение', 'Вычитание', 'XOR', 'Модуль'],
         answer: 2,
       ),
 
       Question(
-        question: 'The key length in a Vernam Cipher should be?',
+        question: 'Какова должна быть длина ключа в шифре Вернама?',
         options: [
-          'As long as the message',
-          'Shorter than the message',
-          'Equal to the message length',
-          'As long as the message'
+          'Такая же, как и длина сообщения',
+          'Короче сообщения',
+          'Равна длине сообщения',
+          'Такая же, как и длина сообщения'
         ],
-        answer: 0, // Add right answer index
+        answer: 0, // Добавьте правильный индекс ответа
       ),
 
       Question(
-        question: 'Which organization initially developed the Vernam Cipher?',
+        question: 'Какая организация первоначально разработала шифр Вернама?',
         options: [
           'Bell Labs',
-          'NSA (National Security Agency)',
-          'IBM (International Business Machines)'
+          'NSA (Национальное агентство безопасности)',
+          'IBM (Международные бизнес-машины)'
               'RAND Corporation',
           'Bell Labs'
         ],
-        answer: 0, // Add right answer  index
+        answer: 0, // Добавьте правильный индекс ответа
       ),
 
       Question(
-        question: 'Vernam Cipher is considered secure if?',
+        question: 'Шифр Вернама считается безопасным, если?',
         options: [
-          'The key is used more than once',
-          'The key is longer than the message',
-          'The key is a random sequence of bits used only once',
-          'The message is encrypted in blocks'
+          'Ключ используется более одного раза',
+          'Ключ длиннее сообщения',
+          'Ключ является случайной последовательностью бит, используемой только один раз',
+          'Сообщение зашифровано в блоках'
         ],
         answer: 2,
       ),
 
       Question(
-        question: 'The key length in a Vernam Cipher should be?',
+        question: 'Какова должна быть длина ключа в шифре Вернама?',
         options: [
-          'As long as the message',
-          'Shorter than the message',
-          'Equal to the message length',
-          'Twice the message length'
+          'Такая же, как и длина сообщения',
+          'Короче сообщения',
+          'Равна длине сообщения',
+          'В два раза длиннее сообщения'
         ],
-        answer: 0, // Add right answer  index
+        answer: 0, // Добавьте правильный индекс ответа
       ),
-
-      // add more
     ];
   }
 
-//questions caesar
-  // Caesar
+  // Вопросы для шифра Цезаря
   List<Question> getCaesarQuestions() {
     return [
       Question(
-        question: 'What is the primary key size used in Caesar Cipher?',
+        question: 'Какой основной размер ключа используется в шифре Цезаря?',
         options: ['1-25', '1-26', '1-20', '1-30'],
         answer: 0,
       ),
       Question(
-        question: 'What is a primary weakness of the Caesar Cipher?',
+        question: 'Какая основная слабость шифра Цезаря?',
         options: [
-          'High computation',
-          'Easy to brute force',
-          'Requires complex key management',
-          'Difficult to implement'
+          'Высокие вычисления',
+          'Легко поддается перебору',
+          'Требует сложного управления ключами',
+          'Трудно реализовать'
         ],
         answer: 1,
       ),
 
       Question(
-        question:
-            "In Caesar Cipher, what happens when you shift 'Z' by 1 position?",
+        question: "Что произойдет с буквой 'Z' при сдвиге на 1 позицию в шифре Цезаря?",
         options: ['A', 'B', 'Y', 'Z'],
         answer: 0,
       ),
       Question(
-        question: "Where and when was the Caesar Cipher used?",
+        question: "Где и когда использовался шифр Цезаря?",
         options: [
-          'Ancient Greece, around 500 BC',
-          'Medieval Europe, around 1000 AD',
-          'Renaissance Italy, around 1500 AD',
-          'Ancient Rome, around 100 BC'
+          'Древняя Греция, около 500 года до н. э.',
+          'Средневековая Европа, около 1000 года н. э.',
+          'Италия эпохи Ренессанса, около 1500 года н. э.',
+          'Древний Рим, около 100 года до н. э.'
         ],
         answer: 3,
       ),
       Question(
-        question:
-            "Caesar Cipher shifts each letter by how many positions in its simplest form?",
+        question: "На сколько позиций сдвигаются буквы в шифре Цезаря в его самой простой форме?",
         options: ['1', '2', '3', '4'],
         answer: 2,
       ),
       Question(
-        question: "What is a primary characteristic of the Caesar Cipher?",
+        question: "Какова основная характеристика шифра Цезаря?",
         options: [
-          'Polygraphic substitution',
-          'Monographic substitution',
-          'Polyalphabetic substitution',
-          'Transposition'
+          'Полифографическая подстановка',
+          'Монофографическая подстановка',
+          'Полиграфическая подстановка',
+          'Транспозиция'
         ],
         answer: 1,
       ),
-      // add more
     ];
   }
 
-  // Hill
+  // Вопросы для шифра Хилла
   List<Question> getHillQuestions() {
     return [
       Question(
-        question: 'Which type of matrix is used in Hill Cipher?',
+        question: 'Какой тип матрицы используется в шифре Хилла?',
         options: [
-          'Identity matrix',
-          'Diagonal matrix',
-          'Key matrix',
-          'Symmetric matrix'
+          'Единичная матрица',
+          'Диагональная матрица',
+          'Ключевая матрица',
+          'Симметричная матрица'
         ],
         answer: 2,
       ),
       Question(
-        question: 'The key matrix in Hill Cipher should have what property?',
+        question: 'Каким свойством должна обладать ключевая матрица в шифре Хилла?',
         options: [
-          'Invertible modulo 26',
-          'Diagonal elements equal',
-          'Symmetric elements',
-          'Upper triangular form'
+          'Обратимая по модулю 26',
+          'Диагональные элементы равны',
+          'Симметричные элементы',
+          'Верхняя треугольная форма'
         ],
         answer: 0,
       ),
       Question(
-        question:
-            'In Hill Cipher, the determinant of the key matrix should be?',
-        options: ['Zero', 'One', 'Non-zero and invertible', 'Any integer'],
+        question: 'Определитель ключевой матрицы в шифре Хилла должен быть?',
+        options: ['Ноль', 'Один', 'Не ноль и обратим', 'Любое целое число'],
         answer: 2,
       ),
       Question(
-        question:
-            'Hill Cipher encryption relies on which mathematical concept?',
+        question: 'Шифрование по методу Хилла опирается на какой математический концепт?',
         options: [
-          'Modular arithmetic',
-          'Prime factorization',
-          'Matrix multiplication',
-          'Linear congruence'
+          'Модульная арифметика',
+          'Разложение на простые множители',
+          'Умножение матриц',
+          'Линейные согласования'
         ],
         answer: 2,
       ),
       Question(
-        question: 'Hill Cipher can be applied to which type of data?',
-        options: ['Text', 'Images', 'Audio', 'Any digital data'],
+        question: 'Шифр Хилла может быть применен к какому типу данных?',
+        options: ['Текст', 'Изображения', 'Аудио', 'Любые цифровые данные'],
         answer: 3,
       ),
       Question(
-        question: 'What is the fundamental principle behind the Hill Cipher?',
+        question: 'Каков основной принцип шифра Хилла?',
         options: [
-          'Linear algebra',
-          'Number theory',
-          'Factorization',
-          'Elliptic curves'
+          'Линейная алгебра',
+          'Числовая теория',
+          'Факторизация',
+          'Эллиптические кривые'
         ],
         answer: 0,
       ),
-      // add more
     ];
   }
 }
