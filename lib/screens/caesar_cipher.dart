@@ -203,7 +203,7 @@ class CaesarCipherScreen extends StatelessWidget {
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Quiz(quizType: 'vernam'),
+                          builder: (context) => Quiz(quizType: 'caesar'),
                         ));
                   },
                   child: const Text('Train'),
