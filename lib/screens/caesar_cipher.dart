@@ -1,3 +1,4 @@
+import 'package:encrypt_ed/screens/quizScreen.dart';
 import 'package:flutter/material.dart';
 
 class CaesarCipherScreen extends StatelessWidget {
@@ -193,6 +194,20 @@ class CaesarCipherScreen extends StatelessWidget {
                         'В отличие от сложных шифров, в нем нет многократной замены символов или перестановки букв'
                   ),
                 ],
+              ),
+
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Quiz(quizType: 'vernam'),
+                        ));
+                  },
+                  child: const Text('Train'),
+                ),
               ),
 
             ],

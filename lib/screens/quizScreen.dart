@@ -17,18 +17,19 @@ class _QuizState extends State<Quiz> {
   final QuestionBank questionBank = QuestionBank();
   late List<Question> questions;
   List<Color> buttonColors = [];
+  bool isButtonDisabled = false;
 
   @override
   void initState() {
     super.initState();
     switch (widget.quizType) {
-      case 'Vernam Cipher':
+      case 'vernam':
         questions = questionBank.getVernamQuestions();
         break;
-      case 'Hill Cipher':
+      case 'hill':
         questions = questionBank.getHillQuestions();
         break;
-      case 'Caesar Cipher':
+      case 'caesar':
         questions = questionBank.getCaesarQuestions();
         break;
       default:
@@ -42,6 +43,7 @@ class _QuizState extends State<Quiz> {
     int correctAnswerIndex = questions[questionIndex].answer;
 
     setState(() {
+      isButtonDisabled = true;
       if (selectedAnswerIndex == correctAnswerIndex) {
         score++;
         buttonColors[selectedAnswerIndex] = Colors.green;
@@ -57,6 +59,7 @@ class _QuizState extends State<Quiz> {
           questionIndex++;
           buttonColors = List.generate(questions[questionIndex].options.length,
                   (index) => Colors.transparent);
+          isButtonDisabled = false;
         });
       } else {
         showDialog(
@@ -106,19 +109,18 @@ class _QuizState extends State<Quiz> {
             ),
             SizedBox(height: 20),
 
-            // Кнопки с прозрачным фоном, меняющимся на красный или зеленый при выборе
             ...questions[questionIndex].options.asMap().entries.map((entry) {
               int idx = entry.key;
               String option = entry.value;
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: Container(
-                  width: double.infinity, // Кнопка по всей ширине
+                  width: double.infinity,
                   decoration: BoxDecoration(
-                    color: buttonColors[idx], // Фон меняется моментально
-                    border: Border.all(color: Colors.deepPurple, width: 2), // Фиолетовая граница
+                    color: buttonColors[idx],
+                    border: Border.all(color: Colors.deepPurple, width: 2), // Border
                     borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Colors.transparent,
                         spreadRadius: 2,
@@ -128,22 +130,24 @@ class _QuizState extends State<Quiz> {
                     ],
                   ),
                   child: TextButton(
-                    onPressed: () => checkAnswer(idx),
+                    onPressed: isButtonDisabled
+                        ? null
+                        : () => checkAnswer(idx),
                     style: TextButton.styleFrom(
-                      padding: EdgeInsets.symmetric(vertical: 15), // Увеличенный размер кнопки
+                      padding: const EdgeInsets.symmetric(vertical: 15),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      foregroundColor: Colors.white, // Цвет текста
+                      foregroundColor: Colors.white,
                     ),
-                    child: Text(option, style: TextStyle(fontSize: 18)),
+                    child: Text(option, style: const TextStyle(fontSize: 18)),
                   ),
                 ),
               );
-            }).toList(),
+            }),
 
-            SizedBox(height: 20),
-            Text('Ваш счет: $score', style: TextStyle(fontSize: 18)),
+            const SizedBox(height: 20),
+            Text('Ваш счет: $score', style: const TextStyle(fontSize: 18)),
           ],
         ),
       ),
