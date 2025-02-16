@@ -106,7 +106,7 @@ class CaesarCipherScreen extends StatelessWidget {
                       boxShadow: [
                         BoxShadow(
                           color: Colors.purple.withOpacity(0.6), // Фиолетовая тень
-                          blurRadius: 10,
+                          blurRadius: 12,
                           spreadRadius: 3,
                         ),
                       ],
