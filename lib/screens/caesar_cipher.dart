@@ -7,7 +7,7 @@ class CaesarCipherScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Caesar Cipher')),
+      appBar: AppBar(title: const Text('Шифр Цезаря')),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -117,7 +117,7 @@ class CaesarCipherScreen extends StatelessWidget {
                       backgroundColor: Colors.purple.withOpacity(0.3),
                       child: Text(
                         ['A→D', 'B→E', 'C→F'][index],
-                        style: const TextStyle(fontWeight: FontWeight.bold),
+                        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12 ),
                       ),
                     ),
                   );
@@ -160,8 +160,8 @@ class CaesarCipherScreen extends StatelessWidget {
                 elevation: 10, // Тень для эффекта поднятия
                 shadowColor: Colors.purple.withOpacity(0.6),
                 child: Container(
-                  width: 310, // Соответствует ширине изображения
-                  height: 160, // Соответствует высоте изображения
+                  width: 500, // Соответствует ширине изображения
+                  height: 113, // Соответствует высоте изображения
                   decoration: BoxDecoration(
                     color: const Color(0xFF442F16),
                     borderRadius: BorderRadius.circular(15),
@@ -178,9 +178,9 @@ class CaesarCipherScreen extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
                     child: Image.asset(
-                      'assets/ancient_rome.jpg',
-                      width: 310, // Указываем ширину изображения
-                      height: 180, // Указываем высоту изображения
+                      'assets/table_vernam.png',
+                      width: 500, // Указываем ширину изображения
+                      height: 113, // Указываем высоту изображения
                       fit: BoxFit.cover, // Заполняет контейнер без искажений
                     ),
                   ),
@@ -206,7 +206,7 @@ class CaesarCipherScreen extends StatelessWidget {
                           builder: (context) => Quiz(quizType: 'caesar'),
                         ));
                   },
-                  child: const Text('Train'),
+                  child: const Text('Тест'),
                 ),
               ),
 
