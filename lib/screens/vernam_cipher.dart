@@ -31,12 +31,12 @@ class VernamCipherScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: const Color(0xFF0D030E),
                     borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Color(0xFFa9a8ab),
                         spreadRadius: 3,
                         blurRadius: 10,
-                        offset: const Offset(0, 3),
+                        offset: Offset(0, 3),
                       ),
                     ],
                   ),
