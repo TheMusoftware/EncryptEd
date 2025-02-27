@@ -16,7 +16,7 @@ class SigninOrSignupScreen extends StatelessWidget {
               Column(
                 children: [
                   const SizedBox(height: 100),
-                  Image.asset("assets/logo.png", height: 200),
+                  Image.asset("assets/logo.png", height: 300),
                   const SizedBox(height: 30),
                   Text(
                     "Welcome to Our App!",

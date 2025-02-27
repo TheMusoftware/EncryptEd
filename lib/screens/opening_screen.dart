@@ -44,7 +44,7 @@ class _OpeningScreenState extends State<OpeningScreen>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('assets/logo.png', width: 150),
+              Image.asset('assets/logo.png', width: 250),
               const SizedBox(height: 20),
               ScaleTransition(
                 scale: _scaleAnimation,
