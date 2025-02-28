@@ -33,25 +33,27 @@ class CardExample extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            SizedBox(height: 20),
             CipherCard(
               icon: Icons.vpn_key,
-              title: 'Caesar Cipher',
+              title: 'Шифр Цезаря',
               description:
-              'A method that scrambles a message by shifting its letters.',
+              'Один из наиболее древнейших методов шифрования, возникший около 100 г. до н.э.',
               onTap: () => _navigateToDetails(context, const CaesarCipherScreen()),
             ),
+            SizedBox(height: 20),
             CipherCard(
               icon: Icons.lock,
-              title: 'Vernam Cipher',
+              title: 'Шифр Вернама',
               description:
-              'An encryption technique using a polyalphabetic substitution.',
+              'Метод шифрования с использованием многоалфавитной замены.',
               onTap: () => _navigateToDetails(context, const VernamCipherScreen()),
             ),
-
+            SizedBox(height: 20),
             CipherCard(
               icon: Icons.grid_on,
-              title: 'Hill Cipher',
-              description: 'An encryption method based on matrix multiplication.',
+              title: 'Шифр Хилла',
+              description: 'Шифр Хилла – полиграммный шифр подстановки, основанный на умножении матриц.',
               onTap: () => _navigateToDetails(context, const HillCipherScreen()),
             ),
           ],
@@ -90,7 +92,7 @@ class CipherCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               TextButton(
-                child: const Text('LEARN MORE'),
+                child: const Text('Подробнее'),
                 onPressed: onTap,
               ),
               const SizedBox(width: 6),

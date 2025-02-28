@@ -160,8 +160,8 @@ class CaesarCipherScreen extends StatelessWidget {
                 elevation: 10, // Тень для эффекта поднятия
                 shadowColor: Colors.purple.withOpacity(0.6),
                 child: Container(
-                  width: 500, // Соответствует ширине изображения
-                  height: 113, // Соответствует высоте изображения
+                  width: 295, // Соответствует ширине изображения
+                  height: 130, // Соответствует высоте изображения
                   decoration: BoxDecoration(
                     color: const Color(0xFF442F16),
                     borderRadius: BorderRadius.circular(15),
@@ -178,9 +178,9 @@ class CaesarCipherScreen extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
                     child: Image.asset(
-                      'assets/table_vernam.png',
-                      width: 500, // Указываем ширину изображения
-                      height: 113, // Указываем высоту изображения
+                      'assets/ancient_rome.jpg',
+                      width: 295, // Указываем ширину изображения
+                      height: 130, // Указываем высоту изображения
                       fit: BoxFit.cover, // Заполняет контейнер без искажений
                     ),
                   ),
