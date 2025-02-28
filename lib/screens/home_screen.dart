@@ -10,10 +10,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _currentIndex = 1;
+  int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    const Center(child: Text('Temp 01', style: TextStyle(fontSize: 24))),
     const Ciphers(),
     const Center(child: Text('Temp 03', style: TextStyle(fontSize: 24))),
   ];
@@ -24,12 +23,10 @@ class _HomeScreenState extends State<HomeScreen> {
       body: _pages[_currentIndex],
       bottomNavigationBar: CircleNavBar(
         activeIcons: const [
-          Icon(Icons.person),
           Icon(Icons.catching_pokemon),
           Icon(Icons.settings),
         ],
         inactiveIcons: const [
-          Text("Profile"),
           Text("Home"),
           Text("Settings"),
         ],
