@@ -55,7 +55,10 @@ class CardExample extends StatelessWidget {
               title: 'Шифр Хилла',
               description: 'Шифр Хилла – полиграммный шифр подстановки, основанный на умножении матриц.',
               onTap: () => _navigateToDetails(context, const HillCipherScreen()),
+
             ),
+            SizedBox(height: 20),
+
           ],
         ),
       ),

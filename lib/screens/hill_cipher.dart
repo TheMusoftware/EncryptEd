@@ -54,8 +54,8 @@ class HillCipherScreen extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               const Text(
-                'Шифр Вернама – это метод шифрования, который считается абсолютно стойким при выполнении определенных условий. '
-                    'Он также известен как одноразовый блокнот (One-Time Pad).',
+               'Шифр Хилла — метод симметричного шифрования, предложенный математиком Лестером Хиллом в 1929 году. '
+                   'Это один из первых методов блочного шифрования, использующий линейную алгебру и матрицы для шифрования текста.'
               ),
               const SizedBox(height: 20),
               Card(
@@ -93,8 +93,8 @@ class HillCipherScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               const Text(
-                'В 1917 году в компании Bell Labs телеграфист Гильберт Вернам изобрёл шифр, где каждая буква сообщения маскируется другой с помощью XOR. '
-                    'Позже Клод Шеннон доказал его абсолютную криптографическую стойкость.',
+                'В шифре Хилла используется ключевая матрица, которая играет важную роль в шифровании и дешифровании текста. Она должна быть обратимой по модулю 26, а ее определитель не может быть равен нулю.'
+                    ,
               ),
               const SizedBox(height: 20),
               const Column(
@@ -149,10 +149,14 @@ class HillCipherScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    '2. Разбить на биграммы буквы:',
+                  // Here we align the text to the left
+                  Align(
+                    alignment: Alignment.centerLeft, // Aligning to the left
+                    child: Text(
+                      '2. Разбить на биграммы буквы:', // Your text
+                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal), // Optional styling
+                    ),
                   ),
                 ],
               ),
@@ -204,7 +208,7 @@ class HillCipherScreen extends StatelessWidget {
                 shadowColor: Colors.purple.withOpacity(0.6),
                 child: Container(
                   width: 292, // Соответствует ширине изображения
-                  height: 117, // Соответствует высоте изображения
+                  height: 120, // Соответствует высоте изображения
                   decoration: BoxDecoration(
                     color: const Color(0xFF442F16),
                     borderRadius: BorderRadius.circular(15),
@@ -292,7 +296,7 @@ class HillCipherScreen extends StatelessWidget {
                 shadowColor: Colors.purple.withOpacity(0.6),
                 child: Container(
                   width: 300, // Уменьшаем ширину контейнера
-                  height: 80, // Уменьшаем высоту контейнера
+                  height: 53, // Уменьшаем высоту контейнера
                   decoration: BoxDecoration(
                     color: const Color(0xFF442F16),
                     borderRadius: BorderRadius.circular(15),
@@ -311,7 +315,7 @@ class HillCipherScreen extends StatelessWidget {
                     child: Image.asset(
                       'assets/table_hill.png',
                       width: 300, // Уменьшаем ширину изображения
-                      height: 80, // Уменьшаем высоту изображения
+                      height: 53, // Уменьшаем высоту изображения
                       fit: BoxFit.cover, // Заполняет контейнер без искажений
                     ),
                   ),
@@ -392,14 +396,14 @@ class HillCipherScreen extends StatelessWidget {
                 elevation: 10, // Тень для эффекта поднятия
                 shadowColor: Colors.purple.withOpacity(0.6),
                 child: Container(
-                  width: 300, // Уменьшаем ширину контейнера
-                  height: 150, // Уменьшаем высоту контейнера
+                  width: 293, // Уменьшаем ширину контейнера
+                  height: 127, // Уменьшаем высоту контейнера
                   decoration: BoxDecoration(
                     color: const Color(0xFF442F16),
                     borderRadius: BorderRadius.circular(15),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.purple.withOpacity(0.6),
+                        color: Colors.white.withOpacity(0.6),
                         spreadRadius: 3,
                         blurRadius: 10,
                         offset: const Offset(0, 3),
@@ -410,9 +414,9 @@ class HillCipherScreen extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
                     child: Image.asset(
-                      'assets/enigma_hill.jpg',
-                      width: 300, // Уменьшаем ширину изображения
-                      height: 150, // Уменьшаем высоту изображения
+                      'assets/ENIGMA.jpg',
+                      width: 293, // Уменьшаем ширину изображения
+                      height: 127, // Уменьшаем высоту изображения
                       fit: BoxFit.cover, // Заполняет контейнер без искажений
                     ),
                   ),
