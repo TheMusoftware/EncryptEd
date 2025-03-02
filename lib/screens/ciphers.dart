@@ -128,7 +128,7 @@ class CardExample extends StatelessWidget {
             ),
 */
             CipherCard(
-              imagePath: 'assets/hill.jpg',
+              imagePath: 'assets/caesar.jpg',
               title: 'Шифр Цезаря',
               description:
               'Один из наиболее древнейших методов шифрования, возникший около 100 г. до н.э.',
@@ -136,7 +136,7 @@ class CardExample extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             CipherCard(
-              imagePath: 'assets/hill.jpg',
+              imagePath: 'assets/vernam.png',
               title: 'Шифр Вернама',
               description:
               'Метод шифрования с использованием многоалфавитной замены.',
