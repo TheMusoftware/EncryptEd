@@ -33,8 +33,9 @@ class CardExample extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 20),
-            Container(
+           /* Container(
               height: 250,  // Increased height to allow more space
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(7.0)),
               child: Stack(
                 children: [
                   Positioned(
@@ -43,7 +44,7 @@ class CardExample extends StatelessWidget {
                     child: Material(
                       child: Container(
                         height: 140,
-                        width: 300,
+                        width: 350,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(7.0),
@@ -82,7 +83,7 @@ class CardExample extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             "Шифр Цезаря",
                             style: TextStyle(
                               fontSize: 18, // Larger size for the title
@@ -91,7 +92,7 @@ class CardExample extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 6),
-                          Text(
+                          const Text(
                             "Один из наиболее древнейших методов шифрования, возникший около 100 г. до н.э.",
                             style: TextStyle(
                               fontSize: 12, // Smaller size for the description
@@ -110,7 +111,7 @@ class CardExample extends StatelessWidget {
                                     // Navigate to the CaesarCipherScreen when the button is pressed
                                     _navigateToDetails(context, const CaesarCipherScreen());
                                   },
-                                  child: const Text('Подробнее'),
+                                  child: const Text('Подробнее',style: TextStyle(fontSize: 18),),
                                 ),
                               ),
                               const SizedBox(width: 6),
@@ -125,9 +126,9 @@ class CardExample extends StatelessWidget {
                 ],
               ),
             ),
-
+*/
             CipherCard(
-              icon: Icons.vpn_key,
+              imagePath: 'assets/hill.jpg',
               title: 'Шифр Цезаря',
               description:
               'Один из наиболее древнейших методов шифрования, возникший около 100 г. до н.э.',
@@ -135,7 +136,7 @@ class CardExample extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             CipherCard(
-              icon: Icons.lock,
+              imagePath: 'assets/hill.jpg',
               title: 'Шифр Вернама',
               description:
               'Метод шифрования с использованием многоалфавитной замены.',
@@ -143,7 +144,7 @@ class CardExample extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             CipherCard(
-              icon: Icons.grid_on,
+              imagePath: 'assets/hill.jpg',
               title: 'Шифр Хилла',
               description:
               'Шифр Хилла – полиграммный шифр подстановки, основанный на умножении матриц.',
@@ -163,13 +164,13 @@ class CardExample extends StatelessWidget {
 }
 
 class CipherCard extends StatelessWidget {
-  final IconData icon;
+  final String imagePath;
   final String title;
   final String description;
   final VoidCallback onTap;
 
   const CipherCard({
-    required this.icon,
+    required this.imagePath,
     required this.title,
     required this.description,
     required this.onTap,
@@ -178,27 +179,99 @@ class CipherCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          ListTile(
-            leading: Icon(icon, size: 40),
-            title: Text(title),
-            subtitle: Text(description),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: <Widget>[
-              TextButton(
-                child: const Text('Подробнее'),
-                onPressed: onTap,
+    return Container(
+      height: 250,
+      child: Stack(
+        children: [
+          Positioned(
+            top: 35,
+            left: 10,
+            child: Material(
+              elevation: 5.0,
+              shadowColor: Colors.purple.withOpacity(0.6),
+              borderRadius: BorderRadius.circular(7.0),
+              child: Container(
+                height: 140,
+                width: 350,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(7.0),
+                ),
               ),
-              const SizedBox(width: 6),
-            ],
+            ),
+          ),
+          Positioned(
+            top: 0,
+            left: 20,
+            child: Card(
+              elevation: 10.0,
+              shadowColor: Colors.purple.withOpacity(0.6),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              child: Container(
+                height: 150,
+                width: 105,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  image: DecorationImage(
+                    image: AssetImage(imagePath),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 40,
+            left: 145,
+            child: SizedBox(
+              height: 150,
+              width: 180,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    description,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  const SizedBox(height: 1),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: TextButton(
+                          onPressed: onTap,
+                          child: const Text(
+                            'Подробнее',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 6),
+                    ],
+                  )
+                ],
+              ),
+            ),
           ),
         ],
       ),
     );
+
   }
 }
