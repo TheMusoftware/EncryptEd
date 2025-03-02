@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   google_sign_in: ^6.2.2
   circle_nav_bar: ^2.2.0
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:

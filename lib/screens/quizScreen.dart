@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../Question.dart';
 import '../QuestionBank.dart';
 
@@ -53,7 +54,7 @@ class _QuizState extends State<Quiz> {
       }
     });
 
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 1), () {
       if (questionIndex < questions.length - 1) {
         setState(() {
           questionIndex++;
@@ -65,8 +66,8 @@ class _QuizState extends State<Quiz> {
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text('Тест пройден!'),
-            content: Text('Ваш счет: $score/${questions.length}'),
+            title: Text('Тест пройден!', style: GoogleFonts.montserrat()),
+            content: Text('Ваш счет: $score/${questions.length}', style: GoogleFonts.montserrat()),
             actions: [
               TextButton(
                 onPressed: () {
@@ -77,7 +78,7 @@ class _QuizState extends State<Quiz> {
                   Navigator.pop(context);
                   Navigator.pop(context);
                 },
-                child: Text('Меню'),
+                child: Text('Меню', style: GoogleFonts.montserrat()),
               ),
             ],
           ),
@@ -90,64 +91,85 @@ class _QuizState extends State<Quiz> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Тест'),
+        title: Text('Тест', style: GoogleFonts.montserrat()),
+        backgroundColor: Colors.deepPurpleAccent,
       ),
-      body: Padding(
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.deepPurple, Colors.blueAccent],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               'Вопрос ${questionIndex + 1}/${questions.length}',
-              style: TextStyle(fontSize: 18),
+              style: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),
+              textAlign: TextAlign.center,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
+
             Text(
               questions[questionIndex].question,
-              style: TextStyle(fontSize: 24),
+              style: GoogleFonts.montserrat(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+              textAlign: TextAlign.center,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
-            ...questions[questionIndex].options.asMap().entries.map((entry) {
-              int idx = entry.key;
-              String option = entry.value;
-              return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: buttonColors[idx],
-                    border: Border.all(color: Colors.deepPurple, width: 2), // Border
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.transparent,
-                        spreadRadius: 2,
-                        blurRadius: 5,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: TextButton(
-                    onPressed: isButtonDisabled
-                        ? null
-                        : () => checkAnswer(idx),
-                    style: TextButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 15),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      foregroundColor: Colors.white,
-                    ),
-                    child: Text(option, style: const TextStyle(fontSize: 18)),
-                  ),
+            Expanded(
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 16.0,
+                  mainAxisSpacing: 16.0,
+                  childAspectRatio: 1,
                 ),
-              );
-            }),
+                itemCount: questions[questionIndex].options.length,
+                itemBuilder: (context, idx) {
+                  String option = questions[questionIndex].options[idx];
+                  return GestureDetector(
+                    onTap: isButtonDisabled ? null : () => checkAnswer(idx),
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                      decoration: BoxDecoration(
+                        color: buttonColors[idx],
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 5,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Center(
+                          child: Text(
+                            option,
+                            style: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.w500, color: Colors.white),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
 
             const SizedBox(height: 20),
-            Text('Ваш счет: $score', style: const TextStyle(fontSize: 18)),
+
+            Text(
+              'Ваш счет: $score',
+              style: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),
+              textAlign: TextAlign.center,
+            ),
           ],
         ),
       ),
