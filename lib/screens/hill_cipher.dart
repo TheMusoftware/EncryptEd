@@ -379,49 +379,7 @@ class HillCipherScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
 
-              const Column(
-                children: [
-                  Text(
-                      '2. Шифр Хилла был широко использован в военной разведке во время Первой и '
-                          'Второй мировых войн, поскольку он позволяет легко зашифровать большое количество информации. К слову, благодаря'
-                          'шифру Хилла была взломана немецкая машинка "Энигма."'
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                elevation: 10, // Тень для эффекта поднятия
-                shadowColor: Colors.purple.withOpacity(0.6),
-                child: Container(
-                  width: 293, // Уменьшаем ширину контейнера
-                  height: 127, // Уменьшаем высоту контейнера
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF442F16),
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.white.withOpacity(0.6),
-                        spreadRadius: 3,
-                        blurRadius: 10,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  padding: const EdgeInsets.all(0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
-                    child: Image.asset(
-                      'assets/ENIGMA.jpg',
-                      width: 293, // Уменьшаем ширину изображения
-                      height: 127, // Уменьшаем высоту изображения
-                      fit: BoxFit.cover, // Заполняет контейнер без искажений
-                    ),
-                  ),
-                ),
-              ),
+
 
 
 
