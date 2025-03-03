@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         brightness: Brightness.dark,
-        primarySwatch: Colors.blueGrey,
+        primaryColor: Colors.black, // Set the primary color to black
+        scaffoldBackgroundColor: Colors.black,
       ),
       debugShowCheckedModeBanner: false,
       title: 'Login App',

@@ -9,7 +9,7 @@ class Ciphers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Ciphers')),
+      appBar: AppBar(title: const Text('Шифры')),
       body: const CardExample(),
     );
   }
@@ -32,130 +32,31 @@ class CardExample extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            const SizedBox(height: 20),
-           /* Container(
-              height: 250,  // Increased height to allow more space
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(7.0)),
-              child: Stack(
-                children: [
-                  Positioned(
-                    top: 35,
-                    left: 10,
-                    child: Material(
-                      child: Container(
-                        height: 140,
-                        width: 350,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(7.0),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: 0,
-                    left: 20,
-                    child: Card(
-                      elevation: 10.0,
-                      shadowColor: Colors.purple.withOpacity(0.6),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
-                      ),
-                      child: Container(
-                        height: 150,
-                        width: 105,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0),
-                          image: const DecorationImage(
-                            image: AssetImage("assets/caesar.jpg"),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: 40,
-                    left: 145, // Positioning the text next to the image
-                    child: Container(
-                      height: 150,
-                      width: 180,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            "Шифр Цезаря",
-                            style: TextStyle(
-                              fontSize: 18, // Larger size for the title
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(height: 6),
-                          const Text(
-                            "Один из наиболее древнейших методов шифрования, возникший около 100 г. до н.э.",
-                            style: TextStyle(
-                              fontSize: 12, // Smaller size for the description
-                              color: Colors.grey,
-                              fontWeight: FontWeight.normal,
-                            ),
-                          ),
-                          const SizedBox(height: 1),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(top: 1.0),  // Adjust the value to raise or lower the button
-                                child: TextButton(
-                                  onPressed: () {
-                                    // Navigate to the CaesarCipherScreen when the button is pressed
-                                    _navigateToDetails(context, const CaesarCipherScreen());
-                                  },
-                                  child: const Text('Подробнее',style: TextStyle(fontSize: 18),),
-                                ),
-                              ),
-                              const SizedBox(width: 6),
-                            ],
-                          )
-
-
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-*/
+            const SizedBox(height: 1),
             CipherCard(
+
               imagePath: 'assets/caesar.jpg',
               title: 'Шифр Цезаря',
               description:
-              'Один из наиболее древнейших методов шифрования, возникший около 100 г. до н.э.',
+              'Один из наиболее древнейших методов шифрования (100 г. до н.э.)',
               onTap: () => _navigateToDetails(context, const CaesarCipherScreen()),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 1),  // уменьшено расстояние между карточками
             CipherCard(
               imagePath: 'assets/vernam.png',
               title: 'Шифр Вернама',
-              description:
-              'Метод шифрования с использованием многоалфавитной замены.',
+              description: 'Метод шифрования с использованием многоалфавитной замены.',
               onTap: () => _navigateToDetails(context, const VernamCipherScreen()),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 1),  // уменьшено расстояние между карточками
             CipherCard(
               imagePath: 'assets/hill.jpg',
               title: 'Шифр Хилла',
               description:
-              'Шифр Хилла – полиграммный шифр подстановки, основанный на умножении матриц.',
+              'Шифр Хилла – полиграммный шифр, основанный на умножении матриц.',
               onTap: () => _navigateToDetails(context, const HillCipherScreen()),
             ),
             const SizedBox(height: 20),
-
-            // New Container with Stack widget
-
-
-
           ],
         ),
       ),
@@ -180,7 +81,8 @@ class CipherCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250,
+      margin: const EdgeInsets.only(bottom: 10), // уменьшено расстояние между карточками
+      height: 230,  // уменьшена высота карточки
       child: Stack(
         children: [
           Positioned(
@@ -192,7 +94,7 @@ class CipherCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(7.0),
               child: Container(
                 height: 140,
-                width: 350,
+                width: 315,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(7.0),
@@ -258,11 +160,11 @@ class CipherCard extends StatelessWidget {
                           onPressed: onTap,
                           child: const Text(
                             'Подробнее',
-                            style: TextStyle(fontSize: 18),
+                            style: TextStyle(fontSize: 13),
                           ),
                         ),
                       ),
-                      const SizedBox(width: 6),
+                      const SizedBox(width: 3),
                     ],
                   )
                 ],
@@ -272,6 +174,5 @@ class CipherCard extends StatelessWidget {
         ],
       ),
     );
-
   }
 }
