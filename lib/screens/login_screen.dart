@@ -5,33 +5,41 @@ class SigninOrSignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    double logoHeight = 250.0;
+
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               // App Logo at the top
               Column(
                 children: [
-                  const SizedBox(height: 200),
-                  Image.asset("assets/logo.png", height: 250),
-                  const SizedBox(height: 30),
+                  SizedBox(height: screenHeight * 0.265),
+                  Image.asset(
+                    "assets/logo.png",
+                    height: logoHeight,
+                  ),
+                  SizedBox(height: screenHeight * 0.05),
                   Text(
                     "Welcome to Our App!",
                     style: TextStyle(
-                      fontSize: 24,
+                      fontSize: screenWidth * 0.07,
                       fontWeight: FontWeight.bold,
                       color: Theme.of(context).primaryColor,
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: screenHeight * 0.02),
                   Text(
                     "Welcome to the World of Ciphers: Mastering the Art of Concealed Communication!",
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: screenWidth * 0.04,
                       color: Colors.grey[600],
                     ),
                     textAlign: TextAlign.center,
@@ -41,6 +49,7 @@ class SigninOrSignupScreen extends StatelessWidget {
 
               const Spacer(),
 
+              // Get Started Button
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, '/home');
@@ -48,13 +57,13 @@ class SigninOrSignupScreen extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   foregroundColor: Colors.white,
-                  minimumSize: const Size(double.infinity, 48),
+                  minimumSize: Size(double.infinity, 48),
                   shape: const StadiumBorder(),
                   backgroundColor: Colors.deepPurple,
                 ),
                 child: const Text("Get Started"),
               ),
-              const SizedBox(height: 32), // Space below the button
+              SizedBox(height: screenHeight * 0.04),
             ],
           ),
         ),

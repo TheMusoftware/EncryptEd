@@ -29,13 +29,16 @@ class _OpeningScreenState extends State<OpeningScreen>
     );
 
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(
-          context, "/login"); // Forward Login page here
+      Navigator.pushReplacementNamed(context, '/login');
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    double logoHeight = 250.0;
     return Scaffold(
       backgroundColor: Colors.black,
       body: Center(
@@ -44,16 +47,20 @@ class _OpeningScreenState extends State<OpeningScreen>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('assets/logo.png', width: 250),
+              Image.asset(
+                'assets/logo.png',
+                height: logoHeight,
+              ),
               const SizedBox(height: 20),
               ScaleTransition(
                 scale: _scaleAnimation,
                 child: const Text(
                   'EncryptEd',
                   style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ],
