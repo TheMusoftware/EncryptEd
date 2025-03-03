@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../Question.dart';
@@ -49,28 +48,28 @@ class _QuizState extends State<Quiz> {
       isButtonDisabled = true;
     });
 
-    // Start flashing the selected answer color
-    Future.delayed(const Duration(milliseconds: 200), () {
-      if (selectedAnswerIndex == correctAnswerIndex) {
-        // Flash green if the answer is correct
-        flashGreen(selectedAnswerIndex);
-      } else {
-        // Flash red if the answer is incorrect
-        flashRed(selectedAnswerIndex);
+    // Flash the selected answer red if it's incorrect
+    if (selectedAnswerIndex != correctAnswerIndex) {
+      setState(() {
+        buttonColors[selectedAnswerIndex] = Colors.red; // Incorrect answer is red
+      });
+    }
+
+    // After 1 second, show the correct answer as green
+    Future.delayed(const Duration(seconds: 1), () {
+      if (selectedAnswerIndex != correctAnswerIndex) {
+        setState(() {
+          buttonColors[correctAnswerIndex] = Colors.green; // Correct answer is green
+        });
       }
     });
 
-    // After flashing, set the final color and proceed
+    // After 2 seconds, move to the next question or show the dialog if it's the last question
     Future.delayed(const Duration(seconds: 2), () {
       setState(() {
         if (selectedAnswerIndex == correctAnswerIndex) {
           score++; // Correct answer increases score
-          buttonColors[selectedAnswerIndex] =
-              Colors.green; // Correct answer is green
-        } else {
-          buttonColors[selectedAnswerIndex] = Colors.red; // Wrong answer is red
-          buttonColors[correctAnswerIndex] =
-              Colors.green; // Correct answer is green
+          buttonColors[selectedAnswerIndex] = Colors.green; // Correct answer stays green
         }
       });
 
@@ -81,8 +80,7 @@ class _QuizState extends State<Quiz> {
             questionIndex++;
             buttonColors = List.generate(
                 questions[questionIndex].options.length,
-                (index) => Colors
-                    .transparent); // Reset button colors for the next question
+                    (index) => Colors.transparent); // Reset button colors for the next question
             isButtonDisabled = false;
           });
         } else {
@@ -112,61 +110,17 @@ class _QuizState extends State<Quiz> {
     });
   }
 
-  void flashRed(int selectedAnswerIndex) {
-    Timer.periodic(const Duration(milliseconds: 300), (timer) {
-      if (timer.tick % 2 == 0) {
-        setState(() {
-          buttonColors[selectedAnswerIndex] = Colors.red;
-        });
-      } else {
-        setState(() {
-          buttonColors[selectedAnswerIndex] = Colors.green;
-        });
-      }
-
-      if (timer.tick > 5) {
-        timer.cancel();
-        setState(() {
-          buttonColors[selectedAnswerIndex] =
-              Colors.red; // Final color stays red
-        });
-      }
-    });
-  }
-
-  void flashGreen(int selectedAnswerIndex) {
-    Timer.periodic(const Duration(milliseconds: 300), (timer) {
-      if (timer.tick % 2 == 0) {
-        setState(() {
-          buttonColors[selectedAnswerIndex] = Colors.green;
-        });
-      } else {
-        setState(() {
-          buttonColors[selectedAnswerIndex] = Colors.red;
-        });
-      }
-
-      if (timer.tick > 5) {
-        timer.cancel();
-        setState(() {
-          buttonColors[selectedAnswerIndex] =
-              Colors.green; // Final color stays green
-        });
-      }
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Тест', style: GoogleFonts.montserrat()),
-        backgroundColor: Colors.deepPurpleAccent,
+        title: Text('Тест'),
+        backgroundColor: Colors.black,
       ),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.deepPurple, Colors.blueAccent],
+            colors: [Colors.deepPurple, Colors.black],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -226,7 +180,7 @@ class _QuizState extends State<Quiz> {
                           child: Text(
                             option,
                             style: GoogleFonts.montserrat(
-                                fontSize: 18,
+                                fontSize: 15,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.white),
                             textAlign: TextAlign.center,

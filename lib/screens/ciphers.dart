@@ -81,7 +81,7 @@ class CipherCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 10), // уменьшено расстояние между карточками
+      margin: const EdgeInsets.only(bottom: 3), // уменьшено расстояние между карточками
       height: 230,  // уменьшена высота карточки
       child: Stack(
         children: [

@@ -198,6 +198,7 @@ class VernamCipherScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(height: 20),
               const Column(
                 children: [
                   Text(

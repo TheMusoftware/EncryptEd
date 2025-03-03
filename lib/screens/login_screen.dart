@@ -50,9 +50,9 @@ class SigninOrSignupScreen extends StatelessWidget {
                   foregroundColor: Colors.white,
                   minimumSize: const Size(double.infinity, 48),
                   shape: const StadiumBorder(),
-                  backgroundColor: Colors.deepPurple,
+                  backgroundColor: Colors.deepPurple.withOpacity(0.6),
                 ),
-                child: const Text("Get Started"),
+                child: const Text("Старт"),
               ),
               const SizedBox(height: 32), // Space below the button
             ],
