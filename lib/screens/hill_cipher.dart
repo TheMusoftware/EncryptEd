@@ -7,7 +7,7 @@ class HillCipherScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Меню')),
+      appBar: AppBar(title: const Text('Шифр Хилла')),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
