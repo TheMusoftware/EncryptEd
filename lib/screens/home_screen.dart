@@ -1,4 +1,5 @@
 import 'package:encrypt_ed/screens/ciphers.dart';
+import 'package:encrypt_ed/screens/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:circle_nav_bar/circle_nav_bar.dart';
 
@@ -14,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _pages = [
     const Ciphers(),
-    const Center(child: Text('Temp 03', style: TextStyle(fontSize: 24))),
+    const SettingsScreen(),
   ];
 
   @override
