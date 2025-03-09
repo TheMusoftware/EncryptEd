@@ -123,7 +123,7 @@ class CardMap extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) =>
-                            Quiz(quizType: title), // Parametreyi geçiyoruz
+                            Quiz(quizType: title),
                       ),
                     );
                   },

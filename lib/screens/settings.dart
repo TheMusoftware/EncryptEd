@@ -17,7 +17,14 @@ class SettingsScreen extends StatelessWidget {
               imagePath: 'assets/logo.png',
               title: 'Profile Settings',
               description: 'Change your profile settings.',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ProfileSettingsScreen(),
+                  ),
+                );
+              },
             ),
             const SizedBox(height: 12),
 
@@ -141,6 +148,21 @@ class SettingsScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+class ProfileSettingsScreen extends StatelessWidget {
+  const ProfileSettingsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Profile Settings'),
+      ),
+      body: const Center(
+        child: Text('Profile settings content goes here'),
       ),
     );
   }
