@@ -42,7 +42,7 @@ class SettingsScreen extends StatelessWidget {
 
             // About
             _buildSettingCard(
-              imagePath: 'assets/logo.png',
+              imagePath: 'assets/logo.png', //Will add more info here
               title: 'About',
               description: 'Learn more about the app.',
               onTap: () {},
