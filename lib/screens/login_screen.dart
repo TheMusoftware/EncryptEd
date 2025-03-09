@@ -37,7 +37,7 @@ class SigninOrSignupScreen extends StatelessWidget {
                   ),
                   SizedBox(height: screenHeight * 0.02),
                   Text(
-                    "Welcome to the World of Ciphers: Mastering the Art of Concealed Communication!",
+                    "Откройте мир криптографии с Encrypted",
                     style: TextStyle(
                       fontSize: screenWidth * 0.04,
                       color: Colors.grey[600],

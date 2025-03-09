@@ -7,16 +7,16 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings'),
+        title: const Text('Алгоритмы'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
             _buildSettingCard(
-              imagePath: 'assets/logo.png',
-              title: 'Profile Settings',
-              description: 'Change your profile settings.',
+              imagePath: 'assets/wheatstone.jpg',
+              title: 'Двойной квадрат Уинстона',
+              description: 'Метод шифрования, изобретен в 1854 году.',
               onTap: () {
                 Navigator.push(
                   context,
@@ -30,9 +30,12 @@ class SettingsScreen extends StatelessWidget {
 
             // Privacy Settings
             _buildSettingCard(
-              imagePath: 'assets/logo.png',
-              title: 'Privacy Settings',
-              description: 'Control your privacy settings.',
+              imagePath: 'assets/devil_magic_square.png',
+              title: 'Магический квадрат',
+              description: 'Таблица с равными суммами в строках, столбцах.',
+
+
+
               onTap: () {},
             ),
             const SizedBox(height: 12),
