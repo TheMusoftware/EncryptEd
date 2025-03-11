@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.black,
       ),
       debugShowCheckedModeBanner: false,
-      title: 'Login App',
+      title: 'EncryptEd',
       initialRoute: '/',
       routes: {
         '/': (context) => const OpeningScreen(),

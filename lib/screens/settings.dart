@@ -139,7 +139,7 @@ class SettingsScreen extends StatelessWidget {
                           onPressed: onTap,
                           child: const Text(
                             'Подробнее',
-                            style: TextStyle(fontSize: 13),
+                            style: TextStyle(fontSize: 14),
                           ),
                         ),
                       ),
