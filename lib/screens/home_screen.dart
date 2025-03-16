@@ -1,5 +1,5 @@
 import 'package:encrypt_ed/screens/ciphers.dart';
-import 'package:encrypt_ed/screens/settings.dart';
+import 'package:encrypt_ed/screens/algorithms_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:circle_nav_bar/circle_nav_bar.dart';
 
