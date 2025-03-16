@@ -1,3 +1,4 @@
+import 'package:encrypt_ed/screens/double_square.dart';
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -21,7 +22,7 @@ class SettingsScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ProfileSettingsScreen(),
+                    builder: (context) => const DoubleSquare(),
                   ),
                 );
               },
