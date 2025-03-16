@@ -13,7 +13,7 @@ class Standartization extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Криптографическая стандартизация РБ',
+                'Криптографическая стандартизация ',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),

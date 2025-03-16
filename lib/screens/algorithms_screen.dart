@@ -1,4 +1,5 @@
 import 'package:encrypt_ed/screens/double_square.dart';
+import 'package:encrypt_ed/screens/standartization.dart';
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -32,12 +33,16 @@ class SettingsScreen extends StatelessWidget {
             // Privacy Settings
             _buildSettingCard(
               imagePath: 'assets/devil_magic_square.png',
-              title: 'Магический квадрат',
-              description: 'Таблица с равными суммами в строках, столбцах.',
-
-
-
-              onTap: () {},
+              title: 'Криптографическая стандартизация',
+              description: 'Информация про ГОСТ РБ',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Standartization(),
+                  ),
+                );
+              },
             ),
             const SizedBox(height: 12),
 
@@ -98,8 +103,7 @@ class SettingsScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10.0),
                   image: DecorationImage(
                     image: AssetImage(imagePath),
-                    fit: BoxFit.cover,
-                  ),
+                    fit: BoxFit.cover,),
                 ),
               ),
             ),
