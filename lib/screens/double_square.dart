@@ -168,7 +168,7 @@ class DoubleSquare extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center, // Выравнивание по центру вертикально
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: List.generate(2, (index) {
-                  return Container(
+                  return Container( //just for design
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       boxShadow: [
