@@ -1,13 +1,11 @@
-// double_square.dart
 import 'package:flutter/material.dart';
 import 'package:encrypt_ed/screens/quizScreen.dart';
-class DoubleSquare extends StatelessWidget {
-  const DoubleSquare({super.key});
-
+class Standartization extends StatelessWidget {
+  const Standartization({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Квадрат Уитсона')),
+      appBar: AppBar(title: const Text('Стандартизация')),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -15,7 +13,7 @@ class DoubleSquare extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Квадрат Уитсона',
+                'Криптографическая стандартизация РБ',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),
@@ -65,7 +63,7 @@ class DoubleSquare extends StatelessWidget {
                 'Метод двойного квадрата Уитсона (Шифр Уитсона) включает две таблицы подстановки 5x5, каждая из '
                     'которых содержит все буквы алфавита, за исключением одной, обычно "J", '
                     'которое заменяется на "I". Это позволяет использовать только 25 символов для латинского алфавита.'
-                    ,
+                ,
               ),
               const SizedBox(height: 20),
 
@@ -120,7 +118,7 @@ class DoubleSquare extends StatelessWidget {
               ),
               SizedBox(height: 20),// Добавляем небольшой отступ между строками
               const Text(
-                '2. Берём ключевое слово keyword, добавляем оставшиеся буквы алфавита (без повторов и исключая одну букву): '
+                  '2. Берём ключевое слово keyword, добавляем оставшиеся буквы алфавита (без повторов и исключая одну букву): '
               ),
 
               SizedBox(height: 20),
@@ -165,7 +163,7 @@ class DoubleSquare extends StatelessWidget {
 
               SizedBox(height: 20),
               Row(
-         // Выравнивание по центру вертикально
+                // Выравнивание по центру вертикально
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: List.generate(2, (index) {
                   return Container( //just for design
@@ -192,7 +190,7 @@ class DoubleSquare extends StatelessWidget {
               ),
               SizedBox(height: 20),
               const Text(
-                  '4. Шифрование первой пары: в первой таблице буква "c,a" находятся в первой таблице на коордитанах: ',
+                '4. Шифрование первой пары: в первой таблице буква "c,a" находятся в первой таблице на коордитанах: ',
               ),
               SizedBox(height: 20),
               Row(
