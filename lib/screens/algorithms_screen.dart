@@ -10,41 +10,43 @@ class SettingsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Алгоритмы'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView(
-          children: [
-            _buildSettingCard(
-              context,
-              imagePath: 'assets/wheatstone.jpg',
-              title: 'Двойной квадрат Уинстона',
-              description: 'Метод шифрования, изобретен в 1854 году.',
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const DoubleSquare(),
-                  ),
-                );
-              },
-            ),
-            const SizedBox(height: 12),
-            _buildSettingCard(
-              context,
-              imagePath: 'assets/devil_magic_square.png',
-              title: 'Магический квадрат',
-              description: 'Таблица с равными суммами в строках, столбцах.',
-              onTap: () {},
-            ),
-            const SizedBox(height: 12),
-            _buildSettingCard(
-              context,
-              imagePath: 'assets/logo.png',
-              title: 'About',
-              description: 'Learn more about the app.',
-              onTap: () {},
-            ),
-          ],
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: ListView(
+            children: [
+              _buildSettingCard(
+                context,
+                imagePath: 'assets/wheatstone.jpg',
+                title: 'Двойной квадрат Уинстона',
+                description: 'Метод шифрования, изобретен в 1854 году.',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const DoubleSquare(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 12),
+              _buildSettingCard(
+                context,
+                imagePath: 'assets/devil_magic_square.png',
+                title: 'Магический квадрат',
+                description: 'Таблица с равными суммами в строках, столбцах.',
+                onTap: () {},
+              ),
+              const SizedBox(height: 12),
+              _buildSettingCard(
+                context,
+                imagePath: 'assets/logo.png',
+                title: 'About',
+                description: 'Learn more about the app.',
+                onTap: () {},
+              ),
+            ],
+          ),
         ),
       ),
     );
