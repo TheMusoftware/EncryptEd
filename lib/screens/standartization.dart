@@ -5,7 +5,7 @@ class Standartization extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Стандартизация')),
+      appBar: AppBar(title: const Text('Криптографическая стандартизация')),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -13,7 +13,7 @@ class Standartization extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Криптографическая стандартизация ',
+                'Стандартизация РБ',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),
@@ -54,119 +54,138 @@ class Standartization extends StatelessWidget {
 
               const SizedBox(height: 30),
               const Text(
-                'Шифр Уитсона  — это шифр, который использует таблицу подстановки для замены букв, с дополнительной системой шифрования.'
-                    'Шифр Уитсона может обозначать несколько различных методов, но обычно его связывают с методом двойного квадрата, который использует таблицу 5x5 для подстановки символов.',
+                'Криптография в Беларуси развивалась с 1999 года, когда были приняты первые стандарты: СТБ 1176.1-99 (функция хэширования) и СТБ 1176.2-99 (электронная цифровая подпись). Однако в процессе стандартизации возникли проблемы:'
               ),
               const SizedBox(height: 20),
 
               const Text(
-                'Метод двойного квадрата Уитсона (Шифр Уитсона) включает две таблицы подстановки 5x5, каждая из '
-                    'которых содержит все буквы алфавита, за исключением одной, обычно "J", '
-                    'которое заменяется на "I". Это позволяет использовать только 25 символов для латинского алфавита.'
-                ,
+               'Не охвачены все области: стандарты для криптографических протоколов и криптографии на эллиптических кривых не были приняты.'
               ),
-              const SizedBox(height: 20),
 
               const SizedBox(height: 20),
-              const Column(
-                children: [
-                  Text(
-                    'Как работает шифрование ',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-              SizedBox(height: 20,),
-              const Text(
-                '1. Берём ключевое слово example и  добавляем оставшиеся буквы алфавита (без повторов и исключая одну букву, например, "J"',
-
-              ),
-              SizedBox(height: 20),
-              Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                elevation: 10, // Тень для эффекта поднятия
-                shadowColor: Colors.purple.withOpacity(0.6),
-                child: Container(
-                  width: 240, // Соответствует ширине изображения
-                  height: 240, // Соответствует высоте изображения
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFFFFFFF),
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.purple.withOpacity(0.6),
-                        spreadRadius: 3,
-                        blurRadius: 10,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  padding: const EdgeInsets.all(0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Image.asset(
-                      'assets/square_1st.jpg',
-                      width: 240, // Указываем ширину изображения
-                      height: 240, // Указываем высоту изображения
-                      fit: BoxFit.cover, // Заполняет контейнер без искажений
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center, // Выравнивание по центру вертикально
+                crossAxisAlignment: CrossAxisAlignment.center, // Выравнивание по центру горизонтально
+                children: List.generate(1, (index) {
+                  return Container(
+                    width: 280, // Ширина прямоугольника
+                    height: 40, // Высота прямоугольника
+                    alignment: Alignment.center, // Выравнивание текста по центру
+                    margin: const EdgeInsets.symmetric(vertical: 5), // Отступы между прямоугольниками
+                    decoration: BoxDecoration(
+                      color: Colors.white, // Фон прямоугольника
+                      borderRadius: BorderRadius.circular(10), // Скругление углов
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Color(0xFFa9a8ab),
+                          blurRadius: 12,
+                          spreadRadius: 3,
+                          offset: Offset(3, 3),
+                        ),
+                      ],
                     ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),// Добавляем небольшой отступ между строками
-              const Text(
-                  '2. Берём ключевое слово keyword, добавляем оставшиеся буквы алфавита (без повторов и исключая одну букву): '
-              ),
-
-              SizedBox(height: 20),
-              Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                elevation: 10, // Тень для эффекта поднятия
-                shadowColor: Colors.purple.withOpacity(0.6),
-                child: Container(
-                  width: 240, // Соответствует ширине изображения
-                  height: 240, // Соответствует высоте изображения
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFFFFFFF),
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.purple.withOpacity(0.6),
-                        spreadRadius: 3,
-                        blurRadius: 10,
-                        offset: const Offset(0, 3),
+                    child: Text(
+                      ['Не завершено принятие стандартов'][index], // Текст внутри
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
                       ),
-                    ],
-                  ),
-                  padding: const EdgeInsets.all(0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Image.asset(
-                      'assets/square_2nd.jpg',
-                      width: 240, // Указываем ширину изображения
-                      height: 240, // Указываем высоту изображения
-                      fit: BoxFit.cover, // Заполняет контейнер без искажений
+                      textAlign: TextAlign.center, // Выравнивание текста по центру
+                      overflow: TextOverflow.ellipsis, // Обработка переполнения текста
+                      maxLines: null, // Максимум 1 строка
                     ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),// Добавляем небольшой отступ между строками
-              const Text(
-                  '3. Теперь разберём открытый текст "cat" на пары букв (поскольку это слово состоит из трёх букв, добавим разделитель (например, "X") в'
-                      ' конце, чтобы получить четное количество букв)'
+                  );
+                }),
               ),
 
               SizedBox(height: 20),
+              const Text(
+                      'Некоторые документы оставались проектами, особенно в 2006-2007 годах, '
+                      'когда было приостановлено действие переведенных международных стандартов из-за низкого качества перевода.'
+              ),
+              const SizedBox(height: 20),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center, // Выравнивание по центру вертикально
+                crossAxisAlignment: CrossAxisAlignment.center, // Выравнивание по центру горизонтально
+                children: List.generate(1, (index) {
+                  return Container(
+                    width: 280, // Ширина прямоугольника
+                    height: 40, // Высота прямоугольника
+                    alignment: Alignment.center, // Выравнивание текста по центру
+                    margin: const EdgeInsets.symmetric(vertical: 5), // Отступы между прямоугольниками
+                    decoration: BoxDecoration(
+                      color: Colors.white, // Фон прямоугольника
+                      borderRadius: BorderRadius.circular(10), // Скругление углов
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Color(0xFFa9a8ab),
+                          blurRadius: 12,
+                          spreadRadius: 3,
+                          offset: Offset(3, 3),
+                        ),
+                      ],
+                    ),
+                    child: Text(
+                      ['Нет расширений для отечественной криптографии'][index], // Текст внутри
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                      textAlign: TextAlign.center, // Выравнивание текста по центру
+                      maxLines: null, // Убираем ограничение на количество строк
+                    ),
+                  );
+                }),
+              ),
+
+              SizedBox(height: 20),
+              const Text(
+                     'Не были созданы приложения для международных стандартов, в которых должны были фиксироваться идентификаторы отечественных алгоритмов и форматы данных. '
+                     'Это приводило к несоответствию между различными производителями средств ЭЦП.'
+              ),
+              const SizedBox(height: 20),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center, // Выравнивание по центру вертикально
+                crossAxisAlignment: CrossAxisAlignment.center, // Выравнивание по центру горизонтально
+                children: List.generate(1, (index) {
+                  return Container(
+                    width: 280, // Ширина прямоугольника
+                    height: 40, // Высота прямоугольника
+                    alignment: Alignment.center, // Выравнивание текста по центру
+                    margin: const EdgeInsets.symmetric(vertical: 5), // Отступы между прямоугольниками
+                    decoration: BoxDecoration(
+                      color: Colors.white, // Фон прямоугольника
+                      borderRadius: BorderRadius.circular(10), // Скругление углов
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Color(0xFFa9a8ab),
+                          blurRadius: 12,
+                          spreadRadius: 3,
+                          offset: Offset(3, 3),
+                        ),
+                      ],
+                    ),
+                    child: Text(
+                      ['22 мероприятия, разделенные на три группы:'][index], // Текст внутри
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                      textAlign: TextAlign.center, // Выравнивание текста по центру
+                      maxLines: null, // Убираем ограничение на количество строк
+                    ),
+                  );
+                }),
+              ),
+
+              const SizedBox(height: 20),
               Row(
-                // Выравнивание по центру вертикально
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: List.generate(2, (index) {
-                  return Container( //just for design
+                children: List.generate(3, (index) {
+                  return Container(
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       boxShadow: [
@@ -181,191 +200,188 @@ class Standartization extends StatelessWidget {
                     child: CircleAvatar(
                       backgroundColor: Colors.purple.withOpacity(0.3),
                       child: Text(
-                        ['CA', 'TX'][index],
+                        ['A→10', 'B→5', 'C→7'][index],
                         style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12 ),
                       ),
                     ),
                   );
                 }),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               const Text(
-                '4. Шифрование первой пары: в первой таблице буква "c,a" находятся в первой таблице на коордитанах: ',
+                      'Группа A: Разработка и улучшение отечественных стандартов (10 мероприятий.\n'
+                      'Группа B: Принятие зарубежных стандартов (5 мероприятий).\n'
+                      'Группа C: Совершенствование стандартов форматов криптографических данных (7 мероприятий).\n'
               ),
-              SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: List.generate(2, (index) {
-                  return Container(
-                    width: 80, // Ширина прямоугольника
-                    height: 30, // Высота прямоугольника
-                    alignment: Alignment.center, // Выравнивание текста по центру
-                    decoration: BoxDecoration(
-                      color: Colors.purple.withOpacity(0.3), // Фон прямоугольника
-                      borderRadius: BorderRadius.circular(10), // Скругление углов
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.purple.withOpacity(0.6),
-                          blurRadius: 12,
-                          spreadRadius: 3,
-                          offset: const Offset(3, 3),
-                        ),
-                      ],
-                    ),
-                    child: Text(
-                      ['C = (3,3)', 'A = (1,3)'][index], // Текст внутри
-                      style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold,color: Colors.white),
-                    ),
-                  );
-                }),
-              ),
-
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               const Text(
-                'Буквы находятся в одном столбце (столбец 3). По правилам шифрования, если буквы находятся в одном столбце, мы заменяем их на буквы, которые расположены ниже: ',
+                  'На сегодняшний день выполнена большая часть мероприятий по криптографической стандартизации:'
+
               ),
-              SizedBox(height: 20),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center, // Выравнивание по центру вертикально
-                crossAxisAlignment: CrossAxisAlignment.center, // Выравнивание по центру горизонтально
-                children: List.generate(3, (index) {
-                  return Container(
-                    width: 80, // Ширина прямоугольника
-                    height: 30, // Высота прямоугольника
-                    alignment: Alignment.center, // Выравнивание текста по центру
-                    margin: const EdgeInsets.symmetric(vertical: 5), // Отступы между элементами
-                    decoration: BoxDecoration(
-                      color: Colors.purple.withOpacity(0.3), // Фон прямоугольника
-                      borderRadius: BorderRadius.circular(10), // Скругление углов
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.purple.withOpacity(0.6),
-                          blurRadius: 12,
-                          spreadRadius: 3,
-                          offset: const Offset(3, 3),
+              const SizedBox(height: 20),
+              Card(
+                color: Colors.white,
+                elevation: 4.0,  // Добавляем тень
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),  // Закругляем углы карточки
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Первый ГОСТ
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(fontSize: 16.0, color: Colors.black),
+                          children: [
+                            WidgetSpan(
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
+                                decoration: BoxDecoration(
+                                  color: Colors.green,  // Зеленая рамка
+                                  borderRadius: BorderRadius.circular(8), // Закругленные углы рамки
+                                ),
+                                child: Text(
+                                  'СТБ 34.101.27',
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            TextSpan(
+                              text: ' требования безопасности к ПО криптографической защиты.',
+                              style: TextStyle(fontSize: 14.0, color: Colors.black),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    child: Text(
-                      ['C = (2,3) → D', 'A = (1,3) → F', 'CA → DF'][index], // Текст внутри
-                      style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white),
-                    ),
-                  );
-                }),
-              ),
-
-              SizedBox(height: 20),
-              const Text(
-                '5. Шифрование второй пары ("TX"):',
-              ),
-              SizedBox(height: 20),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: List.generate(2, (index) {
-                  return Container(
-                    width: 80, // Ширина прямоугольника
-                    height: 30, // Высота прямоугольника
-                    alignment: Alignment.center, // Выравнивание текста по центру
-                    decoration: BoxDecoration(
-                      color: Colors.purple.withOpacity(0.3), // Фон прямоугольника
-                      borderRadius: BorderRadius.circular(10), // Скругление углов
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.purple.withOpacity(0.6),
-                          blurRadius: 12,
-                          spreadRadius: 3,
-                          offset: const Offset(3, 3),
+                      ),
+                      SizedBox(height: 10),  // Расстояние между строками
+                      // Второй ГОСТ
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(fontSize: 14.0, color: Colors.black),
+                          children: [
+                            WidgetSpan(
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
+                                decoration: BoxDecoration(
+                                  color: Colors.green,  // Зеленая рамка
+                                  borderRadius: BorderRadius.circular(8), // Закругленные углы рамки
+                                ),
+                                child: Text(
+                                  'СТБ 34.101.31',
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            TextSpan(
+                              text: ' - шифрование, хэширование, управление ключами.',
+                              style: TextStyle(fontSize: 14.0, color: Colors.black),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    child: Text(
-                      ['T =  (4, 4)', 'X = (5, 3)'][index], // Текст внутри
-                      style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold,color: Colors.white),
-                    ),
-                  );
-                }),
-              ),
-              SizedBox(height: 20),
-              const Text(
-                'T (строка 4, столбец 4) заменяется на букву, расположенную в строке 4 и в столбце 3:'
-                    'X (строка 5, столбец 3) заменяется на букву, расположенную в строке 5 и в столбце 4:',
-              ),
-
-              SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: List.generate(1, (index) {
-                  return Container(
-                    width: 80, // Ширина прямоугольника
-                    height: 30, // Высота прямоугольника
-                    alignment: Alignment.center, // Выравнивание текста по центру
-                    decoration: BoxDecoration(
-                      color: Colors.purple.withOpacity(0.3), // Фон прямоугольника
-                      borderRadius: BorderRadius.circular(10), // Скругление углов
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.purple.withOpacity(0.6),
-                          blurRadius: 12,
-                          spreadRadius: 3,
-                          offset: const Offset(3, 3),
+                      ),
+                      SizedBox(height: 10),  // Расстояние между строками
+                      // Третий ГОСТ
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(fontSize: 14.0, color: Colors.black),
+                          children: [
+                            WidgetSpan(
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
+                                decoration: BoxDecoration(
+                                  color: Colors.green,  // Зеленая рамка
+                                  borderRadius: BorderRadius.circular(8), // Закругленные углы рамки
+                                ),
+                                child: Text(
+                                  'СТБ 34.101.45', //стб П
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            TextSpan(
+                              text: ' - ЭЦП и транспорт ключей на основе эллиптических кривых.',
+                              style: TextStyle(fontSize: 14.0, color: Colors.black),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    child: Text(
-                      ['T → X', 'S → Y'][index], // Текст внутри
-                      style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold,color: Colors.white),
-                    ),
-                  );
-                }),
-              ),
-              SizedBox(height: 20),
-              const Text(
-                '6. Совмещаем результаты:  ',
-              ),
-              SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: List.generate(1, (index) {
-                  return Container(
-                    width: 80, // Ширина прямоугольника
-                    height: 30, // Высота прямоугольника
-                    alignment: Alignment.center, // Выравнивание текста по центру
-                    decoration: BoxDecoration(
-                      color: Colors.purple.withOpacity(0.3), // Фон прямоугольника
-                      borderRadius: BorderRadius.circular(10), // Скругление углов
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.purple.withOpacity(0.6),
-                          blurRadius: 12,
-                          spreadRadius: 3,
-                          offset: const Offset(3, 3),
-                        ),
-                      ],
-                    ),
-
-                    child: Text(
-                      ['cat → DFPK'][index], // Текст внутри
-                      style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold,color: Colors.white),
-                    ),
-                  );
-                }),
-              ),
-
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Quiz(quizType: 'caesar'),
-                        ));
-                  },
-
-                  child: const Text('Тест'),
+                      ),
+                    ],
+                  ),
                 ),
               ),
+
+
+
+              const SizedBox(height: 20),
+              const Text(
+                  'План мероприятий по стандартизации (2009 год): Включал 22 мероприятия, разделенные на три группы:'
+                      'Группа A: Разработка и улучшение отечественных стандартов (10 мероприятий).'
+                      'Группа B: Принятие зарубежных стандартов (5 мероприятий).'
+                      'Группа C: Совершенствование стандартов форматов криптографических данных (7 мероприятий)'
+              ),
+
+              const SizedBox(height: 20),
+              const Text(
+                  'Разработан предварительный стандарт СТБ П 34.101.50, определяющий идентификаторы '
+                      'и форматы алгоритмов (СТБ 1176.1, СТБ 1176.2, ГОСТ 28147).'
+              ),
+
+              const SizedBox(height: 20),
+              const Text(
+                  'Разработан предварительный стандарт СТБ П 34.101.50, определяющий идентификаторы '
+                      'и форматы алгоритмов (СТБ 1176.1, СТБ 1176.2, ГОСТ 28147).'
+              ),
+
+              const SizedBox(height: 20),
+              const Text(
+                  'Обновлены редакции стандартов:'
+              ),
+
+              const Text(
+                  'СТБ 34.101.17: запрос на сертификат.'
+              ),
+
+              const Text(
+                  'СТБ 34.101.19: форматы сертификатов.'
+              ),
+              const Text(
+                  'СТБ 34.101.23: синтаксис криптографических сообщений (CMS).'
+              ),
+
+              const Text(
+                  'СТБ 34.101.26: протокол OCSP.'
+              ),
+
+              const SizedBox(height: 20),
+              const Text(
+                'Нереализованными остаются 7 мероприятий, из которых важнейшие:'
+              ),
+
+              const SizedBox(height: 20),
+              const Text(
+                  '1. Принять стандарт на протокол TLS с криптонаборами на отечественных алгоритмах.'
+                      '2. Принять стандарт на протоколы аутентификации и выработки общего ключа с эллиптическими кривыми'
+                      '3. Принять стандарт на функции хэширования с 384- и 512-битовыми значениями.'
+                      '4. Принять стандарт на алгоритм шифрования с низкой ресурсоемкостью для малых платформ (например, RFID).'
+
+              ),
+
+
+
+
+
+
 
             ],
 

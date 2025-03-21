@@ -19,7 +19,7 @@ class SettingsScreen extends StatelessWidget {
               context,
               imagePath: 'assets/wheatstone.jpg',
               title: 'Двойной квадрат Уинстона',
-              description: 'Метод шифрования, изобретен в 1854 году.',
+              description: 'Метод изобретен в 1854 году.',
               onTap: () {
                 Navigator.push(
                   context,
@@ -34,7 +34,7 @@ class SettingsScreen extends StatelessWidget {
               context,
               imagePath: 'assets/devil_magic_square.png',
               title: 'Криптографическая стандартизация ',
-              description: 'Таблица с равными суммами в строках, столбцах.',
+              description: 'Информация о криптографической стандартизации.',
               onTap: () {
                 Navigator.push(
                   context,
