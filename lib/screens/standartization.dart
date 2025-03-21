@@ -146,6 +146,12 @@ class Standartization extends StatelessWidget {
                      'Это приводило к несоответствию между различными производителями средств ЭЦП.'
               ),
               const SizedBox(height: 20),
+
+              const Text(
+                  'План мероприятий по стандартизации (2009 год) включал 22 мероприятия, разделенные на три группы:'
+
+              ),
+              const SizedBox(height: 20),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center, // Выравнивание по центру вертикально
                 crossAxisAlignment: CrossAxisAlignment.center, // Выравнивание по центру горизонтально
@@ -213,7 +219,7 @@ class Standartization extends StatelessWidget {
                       'Группа B: Принятие зарубежных стандартов (5 мероприятий).\n'
                       'Группа C: Совершенствование стандартов форматов криптографических данных (7 мероприятий).\n'
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               const Text(
                   'На сегодняшний день выполнена большая часть мероприятий по криптографической стандартизации:'
 
@@ -252,7 +258,7 @@ class Standartization extends StatelessWidget {
                               ),
                             ),
                             TextSpan(
-                              text: ' требования безопасности к ПО криптографической защиты.',
+                              text: ' - требования безопасности к ПО криптографической защиты.',
                               style: TextStyle(fontSize: 14.0, color: Colors.black),
                             ),
                           ],
@@ -323,13 +329,7 @@ class Standartization extends StatelessWidget {
 
 
 
-              const SizedBox(height: 20),
-              const Text(
-                  'План мероприятий по стандартизации (2009 год): Включал 22 мероприятия, разделенные на три группы:'
-                      'Группа A: Разработка и улучшение отечественных стандартов (10 мероприятий).'
-                      'Группа B: Принятие зарубежных стандартов (5 мероприятий).'
-                      'Группа C: Совершенствование стандартов форматов криптографических данных (7 мероприятий)'
-              ),
+
 
               const SizedBox(height: 20),
               const Text(
