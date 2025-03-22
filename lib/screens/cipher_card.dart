@@ -78,7 +78,8 @@ class CipherCard extends StatelessWidget {
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
-                    overflow: TextOverflow.ellipsis,
+                      overflow: TextOverflow.fade,
+                      maxLines: 2
                   ),
                   const SizedBox(height: 6),
                   Expanded(
