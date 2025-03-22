@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _pages = [
     const Ciphers(),
-    const SettingsScreen(),
+    const Algorithms(),
   ];
 
   @override
