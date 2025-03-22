@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:social_sharing_plus/social_sharing_plus.dart';  // Импортируем пакет для обмена
+
 import '../Question.dart';
 import '../QuestionBank.dart';
 
@@ -91,6 +93,7 @@ class _QuizState extends State<Quiz> {
               content: Text('Ваш счет: $score/${questions.length}',
                   style: GoogleFonts.montserrat()),
               actions: [
+                // Кнопка меню
                 TextButton(
                   onPressed: () {
                     setState(() {
@@ -102,12 +105,89 @@ class _QuizState extends State<Quiz> {
                   },
                   child: Text('Меню', style: GoogleFonts.montserrat()),
                 ),
+                // Кнопка "Поделиться"
+                TextButton(
+                  onPressed: _showShareDialog,  // Вызов функции для отображения диалога с соцсетями
+                  child: Text('Поделиться', style: GoogleFonts.montserrat()),
+                ),
               ],
             ),
           );
         }
       });
     });
+  }
+
+  // Функция для отображения диалога с выбором соцсети
+  void _showShareDialog() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Выберите приложение для обмена'),
+          content: SizedBox(
+            height: 200,  // Регулируйте высоту по необходимости
+            child: ListView(
+              children: [
+                // Кнопка Telegram
+                ListTile(
+                  leading: Icon(Icons.chat_bubble_outline, color: Colors.blue),
+                  title: const Text('Поделиться в Telegram'),
+                  onTap: () {
+                    Navigator.pop(context);  // Закрыть диалог
+                    _shareContent(SocialPlatform.telegram);  // Поделиться в Telegram
+                  },
+                ),
+                // Кнопка WhatsApp
+                ListTile(
+                  leading: Icon(Icons.message, color: Colors.green),
+                  title: const Text('Поделиться в WhatsApp'),
+                  onTap: () {
+                    Navigator.pop(context);  // Закрыть диалог
+                    _shareContent(SocialPlatform.whatsapp);  // Поделиться в WhatsApp
+                  },
+                ),
+                // Кнопка Facebook
+                ListTile(
+                  leading: Icon(Icons.facebook, color: Colors.blue),
+                  title: const Text('Поделиться в Facebook'),
+                  onTap: () {
+                    Navigator.pop(context);  // Закрыть диалог
+                    _shareContent(SocialPlatform.facebook);  // Поделиться в Facebook
+                  },
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  // Функция для отправки сообщения в выбранную соцсеть
+  Future<void> _shareContent(SocialPlatform platform) async {
+    String shareMessage = 'Your score in ${widget.quizType} encryption is $score/${questions.length}';
+
+    if (shareMessage.isNotEmpty) {
+      await SocialSharingPlus.shareToSocialMedia(
+        platform,  // Выбираем нужную соцсеть
+        shareMessage,
+        isOpenBrowser: true, // Открывать браузер, если приложение не установлено
+        onAppNotInstalled: () {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('Приложение для обмена не установлено.')),
+            );
+          }
+        },
+      );
+    } else {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Нет текста для обмена.')),
+        );
+      }
+    }
   }
 
   @override

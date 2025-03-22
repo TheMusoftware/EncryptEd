@@ -50,7 +50,7 @@ class CardExample extends StatelessWidget {
             ),
             const SizedBox(height: 1),  // уменьшено расстояние между карточками
             CipherCard(
-              imagePath: 'assets/devil_magic_square.png',
+              imagePath: 'assets/shield.jpg',
               title: 'Криптографическая стандартизация ',
               description: 'Информация о криптографической стандартизации.',
               onTap: () {
