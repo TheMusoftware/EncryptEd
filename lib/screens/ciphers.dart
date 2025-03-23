@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:encrypt_ed/screens/caesar_cipher.dart';
 import 'package:encrypt_ed/screens/vernam_cipher.dart';
 import 'package:encrypt_ed/screens/hill_cipher.dart';
+import 'package:encrypt_ed/screens/double_square.dart';
 
 import 'cipher_card.dart';
 
@@ -58,7 +59,16 @@ class CardExample extends StatelessWidget {
               'Шифр Хилла – полиграммный шифр, основанный на умножении матриц.',
               onTap: () => _navigateToDetails(context, const HillCipherScreen()),
             ),
-            const SizedBox(height: 20),
+
+            const SizedBox(height: 1),
+            CipherCard(
+              imagePath: 'assets/wheatstone.jpg',
+              title: 'Двойной квадрат Уинстона',
+              description:
+              'Метод изобретен в 1854 году.',
+              onTap: () => _navigateToDetails(context, const DoubleSquare()),
+            ),
+
           ],
         ),
       ),

@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
         inactiveIcons: const [
           Text("Главная"),
-          Text("Алгоритмы"),
+          Text("Разное"),
         ],
         color: Colors.black,
         circleColor: Colors.black,

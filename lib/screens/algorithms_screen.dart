@@ -10,7 +10,7 @@ class Algorithms extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Алгоритмы')),
+      appBar: AppBar(title: const Text('Разное')),
       body: const CardExample(),
     );
   }
@@ -34,20 +34,6 @@ class CardExample extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 1),
-            CipherCard(
-
-              imagePath: 'assets/wheatstone.jpg',
-              title: 'Двойной квадрат Уинстона',
-              description: 'Метод изобретен в 1854 году.',
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const DoubleSquare(),
-                  ),
-                );
-              },
-            ),
             const SizedBox(height: 1),  // уменьшено расстояние между карточками
             CipherCard(
               imagePath: 'assets/shield.jpg',
@@ -64,9 +50,9 @@ class CardExample extends StatelessWidget {
             ),
             const SizedBox(height: 1),  // уменьшено расстояние между карточками
             CipherCard(
-              imagePath: 'assets/logo.png',
-              title: 'About',
-              description: 'Learn more about the app.',
+              imagePath: 'assets/logowbg.png',
+              title: 'О нас',
+              description: 'Узнайте больше о нашем приложении.',
               onTap: () {},
             ),
             const SizedBox(height: 20),

@@ -144,7 +144,7 @@ class _QuizState extends State<Quiz> {
                   title: const Text('Поделиться в WhatsApp'),
                   onTap: () {
                     Navigator.pop(context);  // Закрыть диалог
-                    _shareContent(SocialPlatform.whatsapp);  // Поделиться в WhatsApp
+                    _shareContent(SocialPlatform.twitter);  // Поделиться в WhatsApp
                   },
                 ),
                 // Кнопка Facebook
@@ -166,7 +166,9 @@ class _QuizState extends State<Quiz> {
 
   // Функция для отправки сообщения в выбранную соцсеть
   Future<void> _shareContent(SocialPlatform platform) async {
-    String shareMessage = 'Your score in ${widget.quizType} encryption is $score/${questions.length}';
+    String shareMessage = 'Мой результат в тесте на шифрование с использованием  ${widget.quizType} шифра: $score/${questions.length}\n'
+        'На сколько баллов пройдешь ты?';
+
 
     if (shareMessage.isNotEmpty) {
       await SocialSharingPlus.shareToSocialMedia(

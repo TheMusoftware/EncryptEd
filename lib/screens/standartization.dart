@@ -42,7 +42,7 @@ class Standartization extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
                     child: Image.asset(
-                      'assets/wheatstone.jpg',
+                      'assets/shield.jpg',
                       width: double.infinity,
                       height: double.infinity,
                       fit: BoxFit.cover, // Обеспечивает правильную подгонку изображения
@@ -322,60 +322,303 @@ class Standartization extends StatelessWidget {
                           ],
                         ),
                       ),
+                      // 4 гост
+                      SizedBox(height: 10),
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(fontSize: 14.0, color: Colors.black),
+                          children: [
+                            WidgetSpan(
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
+                                decoration: BoxDecoration(
+                                  color: Colors.green,  // Зеленая рамка
+                                  borderRadius: BorderRadius.circular(8), // Закругленные углы рамки
+                                ),
+                                child: Text(
+                                  'СТБ 34.101.17', //стб П
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            TextSpan(
+                              text: ' - запрос на сертификат.',
+                              style: TextStyle(fontSize: 14.0, color: Colors.black),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      //5 гост
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(fontSize: 14.0, color: Colors.black),
+                          children: [
+                            WidgetSpan(
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
+                                decoration: BoxDecoration(
+                                  color: Colors.green,  // Зеленая рамка
+                                  borderRadius: BorderRadius.circular(8), // Закругленные углы рамки
+                                ),
+                                child: Text(
+                                  'СТБ 34.101.19', //стб П
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            TextSpan(
+                              text: ' - форматы сертификатов.',
+                              style: TextStyle(fontSize: 14.0, color: Colors.black),
+                            ),
+                          ],
+                        ),
+                      ),
+                      //6 гост
+                      SizedBox(height: 10),
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(fontSize: 14.0, color: Colors.black),
+                          children: [
+                            WidgetSpan(
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
+                                decoration: BoxDecoration(
+                                  color: Colors.green,  // Зеленая рамка
+                                  borderRadius: BorderRadius.circular(8), // Закругленные углы рамки
+                                ),
+                                child: Text(
+                                  'СТБ 34.101.23', //стб П
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+
+                            TextSpan(
+                              text: ' - синтаксис криптографических сообщений (CMS).',
+                              style: TextStyle(fontSize: 14.0, color: Colors.black),
+                            ),
+                          ],
+                        ),
+                      ),
+                      //гост 6
+                      SizedBox(height: 10),
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(fontSize: 14.0, color: Colors.black),
+                          children: [
+                            WidgetSpan(
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
+                                decoration: BoxDecoration(
+                                  color: Colors.green,  // Зеленая рамка
+                                  borderRadius: BorderRadius.circular(8), // Закругленные углы рамки
+                                ),
+                                child: Text(
+                                  'СТБ 34.101.26', //стб П
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            TextSpan(
+                              text: ' - протокол OCSP.',
+                              style: TextStyle(fontSize: 14.0, color: Colors.black),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center, // Выравнивание по центру вертикально
+                crossAxisAlignment: CrossAxisAlignment.center, // Выравнивание по центру горизонтально
+                children: List.generate(1, (index) {
+                  return Container(
+                    width: 280, // Ширина прямоугольника
+                    height: 40, // Высота прямоугольника
+                    alignment: Alignment.center, // Выравнивание текста по центру
+                    margin: const EdgeInsets.symmetric(vertical: 5), // Отступы между прямоугольниками
+                    decoration: BoxDecoration(
+                      color: Colors.white, // Фон прямоугольника
+                      borderRadius: BorderRadius.circular(10), // Скругление углов
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Color(0xFFa9a8ab),
+                          blurRadius: 12,
+                          spreadRadius: 3,
+                          offset: Offset(3, 3),
+                        ),
+                      ],
+                    ),
+                    child: Text(
+                      ['Нереализованны 7 мероприятия, из них важнейшие:'][index], // Текст внутри
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                      textAlign: TextAlign.center, // Выравнивание текста по центру
+                      maxLines: null, // Убираем ограничение на количество строк
+                    ),
+                  );
+                }),
+              ),
+
+              const SizedBox(height: 20),
+              Card(
+                color: Colors.white,  // Белый фон
+                elevation: 4.0,  // Тень для карточки
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),  // Закругленные углы
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),  // Отступы внутри карточки
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // 1-й ГОСТ
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(fontSize: 14.0, color: Colors.black),
+                          children: [
+                            WidgetSpan(
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
+                                decoration: BoxDecoration(
+                                  color: Colors.red,  // Красная рамка
+                                  borderRadius: BorderRadius.circular(8),  // Закругленные углы рамки
+                                ),
+                                child: Text(
+                                  'TLS Протокол',  // Основное выделение
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            TextSpan(
+                              text: ' - необходимо принять стандарт на использование протокола TLS с криптонаборами на отечественных алгоритмах. '
+                                  'Это обеспечит высокий уровень безопасности передачи данных и совместимость с национальными стандартами.',
+                              style: TextStyle(fontSize: 14.0, color: Colors.black),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 10),  // Расстояние между строками
+
+                      // 2-й ГОСТ
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(fontSize: 14.0, color: Colors.black),
+                          children: [
+                            WidgetSpan(
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
+                                decoration: BoxDecoration(
+                                  color: Colors.red,  // Красная рамка
+                                  borderRadius: BorderRadius.circular(8),  // Закругленные углы рамки
+                                ),
+                                child: Text(
+                                  'Аутентификация',  // Основное выделение
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            TextSpan(
+                              text: ' - необходимо разработать стандарт для протоколов аутентификации и выработки общего ключа с использованием эллиптических кривых. '
+                                  'Это гарантирует эффективную и безопасную обработку данных при минимальных ресурсах.',
+                              style: TextStyle(fontSize: 14.0, color: Colors.black),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 10),  // Расстояние между строками
+
+                      // 3-й ГОСТ
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(fontSize: 14.0, color: Colors.black),
+                          children: [
+                            WidgetSpan(
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
+                                decoration: BoxDecoration(
+                                  color: Colors.red,  // Красная рамка
+                                  borderRadius: BorderRadius.circular(8),  // Закругленные углы рамки
+                                ),
+                                child: Text(
+                                  'Хэширование',  // Основное выделение
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            TextSpan(
+                              text: ' - необходимо принять стандарт для функций хэширования с 384- и 512-битовыми значениями, что позволяет значительно '
+                                  'повысить безопасность хранимых данных и ускорить процессы их обработки.',
+                              style: TextStyle(fontSize: 14.0, color: Colors.black),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 10),  // Расстояние между строками
+
+                      // 4-й ГОСТ
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(fontSize: 14.0, color: Colors.black),
+                          children: [
+                            WidgetSpan(
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
+                                decoration: BoxDecoration(
+                                  color: Colors.red,  // Красная рамка
+                                  borderRadius: BorderRadius.circular(8),  // Закругленные углы рамки
+                                ),
+                                child: Text(
+                                  'Шифрование',  // Основное выделение
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            TextSpan(
+                              text: ' - требуется принять стандарт для алгоритма шифрования с низкой ресурсоемкостью, специально предназначенного для '
+                                  'малых платформ, таких как RFID, что позволяет использовать его в ограниченных вычислительных средах.',
+                              style: TextStyle(fontSize: 14.0, color: Colors.black),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
               ),
 
-
-
-
-
-              const SizedBox(height: 20),
-              const Text(
-                  'Разработан предварительный стандарт СТБ П 34.101.50, определяющий идентификаторы '
-                      'и форматы алгоритмов (СТБ 1176.1, СТБ 1176.2, ГОСТ 28147).'
-              ),
-
-              const SizedBox(height: 20),
-              const Text(
-                  'Разработан предварительный стандарт СТБ П 34.101.50, определяющий идентификаторы '
-                      'и форматы алгоритмов (СТБ 1176.1, СТБ 1176.2, ГОСТ 28147).'
-              ),
-
-              const SizedBox(height: 20),
-              const Text(
-                  'Обновлены редакции стандартов:'
-              ),
-
-              const Text(
-                  'СТБ 34.101.17: запрос на сертификат.'
-              ),
-
-              const Text(
-                  'СТБ 34.101.19: форматы сертификатов.'
-              ),
-              const Text(
-                  'СТБ 34.101.23: синтаксис криптографических сообщений (CMS).'
-              ),
-
-              const Text(
-                  'СТБ 34.101.26: протокол OCSP.'
-              ),
-
-              const SizedBox(height: 20),
-              const Text(
-                'Нереализованными остаются 7 мероприятий, из которых важнейшие:'
-              ),
-
-              const SizedBox(height: 20),
-              const Text(
-                  '1. Принять стандарт на протокол TLS с криптонаборами на отечественных алгоритмах.'
-                      '2. Принять стандарт на протоколы аутентификации и выработки общего ключа с эллиптическими кривыми'
-                      '3. Принять стандарт на функции хэширования с 384- и 512-битовыми значениями.'
-                      '4. Принять стандарт на алгоритм шифрования с низкой ресурсоемкостью для малых платформ (например, RFID).'
-
-              ),
 
 
 
