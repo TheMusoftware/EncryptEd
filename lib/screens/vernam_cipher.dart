@@ -26,7 +26,8 @@ class VernamCipherScreen extends StatelessWidget {
                 elevation: 10, // Тень для эффекта поднятия
                 shadowColor: Colors.purple.withOpacity(0.6),
                 child: Container(
-                  width: 200, // Уменьшаем ширину карточки
+                  width: 200,
+                  // Уменьшаем ширину карточки
                   height: 265,
                   decoration: BoxDecoration(
                     color: const Color(0xFF0D030E),
@@ -55,7 +56,7 @@ class VernamCipherScreen extends StatelessWidget {
               const SizedBox(height: 30),
               const Text(
                 'Шифр Вернама – это метод шифрования, который считается абсолютно стойким при выполнении определенных условий. '
-                    'Он также известен как одноразовый блокнот (One-Time Pad).',
+                'Он также известен как одноразовый блокнот (One-Time Pad).',
               ),
               const SizedBox(height: 20),
 
@@ -67,7 +68,8 @@ class VernamCipherScreen extends StatelessWidget {
                 elevation: 10, // Тень для эффекта поднятия
                 shadowColor: Color(0xFFa9a8ab),
                 child: Container(
-                  width: 500, // Уменьшаем ширину карточки
+                  width: 500,
+                  // Уменьшаем ширину карточки
                   height: 113,
                   decoration: BoxDecoration(
                     color: const Color(0xFFFFFFFF),
@@ -96,7 +98,7 @@ class VernamCipherScreen extends StatelessWidget {
               const SizedBox(height: 20),
               const Text(
                 'В 1917 году в компании Bell Labs телеграфист Гильберт Вернам изобрёл шифр, где каждая буква сообщения маскируется другой с помощью XOR. '
-                    'Позже Клод Шеннон доказал его абсолютную криптографическую стойкость.',
+                'Позже Клод Шеннон доказал его абсолютную криптографическую стойкость.',
               ),
               const SizedBox(height: 20),
 
@@ -114,8 +116,8 @@ class VernamCipherScreen extends StatelessWidget {
                 children: [
                   Text(
                     '1.Использование одноразового ключа: '
-                        'Ключ должен быть такой же длины, как и само сообщение, также должен быть случайным и использоваться только один раз.'
-                        'Повторное использование ключа делает шифр уязвимым.',
+                    'Ключ должен быть такой же длины, как и само сообщение, также должен быть случайным и использоваться только один раз.'
+                    'Повторное использование ключа делает шифр уязвимым.',
                   ),
                 ],
               ),
@@ -124,8 +126,7 @@ class VernamCipherScreen extends StatelessWidget {
                 children: [
                   Text(
                       '2. В основе шифра лежит операция XOR (исключающее ИЛИ). '
-                          'При шифровании каждый бит сообщения складывается с соответствующим битом ключа по правилу:'
-                  ),
+                      'При шифровании каждый бит сообщения складывается с соответствующим битом ключа по правилу:'),
                 ],
               ),
               const SizedBox(height: 20),
@@ -133,12 +134,17 @@ class VernamCipherScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: List.generate(3, (index) {
                   return Container(
-                    width: 80, // Ширина прямоугольника
-                    height: 30, // Высота прямоугольника
-                    alignment: Alignment.center, // Выравнивание текста по центру
+                    width: 80,
+                    // Ширина прямоугольника
+                    height: 30,
+                    // Высота прямоугольника
+                    alignment: Alignment.center,
+                    // Выравнивание текста по центру
                     decoration: BoxDecoration(
-                      color: Colors.white, // Фон прямоугольника
-                      borderRadius: BorderRadius.circular(10), // Скругление углов
+                      color: Colors.white,
+                      // Фон прямоугольника
+                      borderRadius: BorderRadius.circular(10),
+                      // Скругление углов
                       boxShadow: [
                         BoxShadow(
                           color: Color(0xFFa9a8ab),
@@ -149,8 +155,12 @@ class VernamCipherScreen extends StatelessWidget {
                       ],
                     ),
                     child: Text(
-                      ['0 ⊕ 0 = 0', '0 ⊕ 1 = 1', '1 ⊕ 1 = 0'][index], // Текст внутри
-                      style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold,color: Colors.black),
+                      ['0 ⊕ 0 = 0', '0 ⊕ 1 = 1', '1 ⊕ 1 = 0'][index],
+                      // Текст внутри
+                      style: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
                     ),
                   );
                 }),
@@ -160,8 +170,7 @@ class VernamCipherScreen extends StatelessWidget {
                 children: [
                   Text(
                       '3. Шифр Вернама абсолютно стойкий: если ключ случайный, уникальный и используется один раз, расшифровать сообщение невозможно. '
-                          'Этот метод доказан как информационно-теоретически безопасный.'
-                  ),
+                      'Этот метод доказан как информационно-теоретически безопасный.'),
                 ],
               ),
               SizedBox(height: 20),
@@ -172,7 +181,8 @@ class VernamCipherScreen extends StatelessWidget {
                 elevation: 10, // Тень для эффекта поднятия
                 shadowColor: Color(0xFFa9a8ab),
                 child: Container(
-                  width: 500, // Уменьшаем ширину карточки
+                  width: 500,
+                  // Уменьшаем ширину карточки
                   height: 125,
                   decoration: BoxDecoration(
                     color: const Color(0xFFFFFFFF),
@@ -203,9 +213,8 @@ class VernamCipherScreen extends StatelessWidget {
                 children: [
                   Text(
                       '2. Шифр Вернама был использован в военной разведке во время Первой и '
-                          'Второй мировых войн, поскольку он позволяет легко зашифровать большое количество информации. К слову, благодаря'
-                          'шифру Вернаму была взломана немецкая машинка "Энигма."'
-                  ),
+                      'Второй мировых войн, поскольку он позволяет легко зашифровать большое количество информации. К слову, благодаря'
+                      'шифру Вернаму была взломана немецкая машинка "Энигма."'),
                 ],
               ),
               const SizedBox(height: 20),
@@ -216,8 +225,10 @@ class VernamCipherScreen extends StatelessWidget {
                 elevation: 10, // Тень для эффекта поднятия
                 shadowColor: Colors.purple.withOpacity(0.6),
                 child: Container(
-                  width: 293, // Уменьшаем ширину контейнера
-                  height: 127, // Уменьшаем высоту контейнера
+                  width: 293,
+                  // Уменьшаем ширину контейнера
+                  height: 127,
+                  // Уменьшаем высоту контейнера
                   decoration: BoxDecoration(
                     color: const Color(0xFF442F16),
                     borderRadius: BorderRadius.circular(15),
@@ -255,9 +266,7 @@ class VernamCipherScreen extends StatelessWidget {
                   child: const Text('Тест'),
                 ),
               ),
-
             ],
-
           ),
         ),
       ),

@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:social_sharing_plus/social_sharing_plus.dart';  // Импортируем пакет для обмена
+import 'package:social_sharing_plus/social_sharing_plus.dart'; // Импортируем пакет для обмена
 
 import '../Question.dart';
 import '../QuestionBank.dart';
@@ -53,7 +53,8 @@ class _QuizState extends State<Quiz> {
     // Flash the selected answer red if it's incorrect
     if (selectedAnswerIndex != correctAnswerIndex) {
       setState(() {
-        buttonColors[selectedAnswerIndex] = Colors.red; // Incorrect answer is red
+        buttonColors[selectedAnswerIndex] =
+            Colors.red; // Incorrect answer is red
       });
     }
 
@@ -61,7 +62,8 @@ class _QuizState extends State<Quiz> {
     Future.delayed(const Duration(seconds: 1), () {
       if (selectedAnswerIndex != correctAnswerIndex) {
         setState(() {
-          buttonColors[correctAnswerIndex] = Colors.green; // Correct answer is green
+          buttonColors[correctAnswerIndex] =
+              Colors.green; // Correct answer is green
         });
       }
     });
@@ -71,7 +73,8 @@ class _QuizState extends State<Quiz> {
       setState(() {
         if (selectedAnswerIndex == correctAnswerIndex) {
           score++; // Correct answer increases score
-          buttonColors[selectedAnswerIndex] = Colors.green; // Correct answer stays green
+          buttonColors[selectedAnswerIndex] =
+              Colors.green; // Correct answer stays green
         }
       });
 
@@ -82,7 +85,8 @@ class _QuizState extends State<Quiz> {
             questionIndex++;
             buttonColors = List.generate(
                 questions[questionIndex].options.length,
-                    (index) => Colors.transparent); // Reset button colors for the next question
+                (index) => Colors
+                    .transparent); // Reset button colors for the next question
             isButtonDisabled = false;
           });
         } else {
@@ -107,7 +111,8 @@ class _QuizState extends State<Quiz> {
                 ),
                 // Кнопка "Поделиться"
                 TextButton(
-                  onPressed: _showShareDialog,  // Вызов функции для отображения диалога с соцсетями
+                  onPressed: _showShareDialog,
+                  // Вызов функции для отображения диалога с соцсетями
                   child: Text('Поделиться', style: GoogleFonts.montserrat()),
                 ),
               ],
@@ -126,25 +131,33 @@ class _QuizState extends State<Quiz> {
         return AlertDialog(
           title: const Text('Выберите приложение для обмена'),
           content: SizedBox(
-            height: 200,  // Регулируйте высоту по необходимости
+            height: 200, // Регулируйте высоту по необходимости
             child: ListView(
               children: [
                 // Кнопка Telegram
                 ListTile(
-                  leading: Icon(Icons.chat_bubble_outline, color: Colors.blue),
+                  leading: Image.asset(
+                    "assets/telegram.png",
+                    height: 24,
+                  ),
                   title: const Text('Поделиться в Telegram'),
                   onTap: () {
-                    Navigator.pop(context);  // Закрыть диалог
-                    _shareContent(SocialPlatform.telegram);  // Поделиться в Telegram
+                    Navigator.pop(context); // Закрыть диалог
+                    _shareContent(
+                        SocialPlatform.telegram); // Поделиться в Telegram
                   },
                 ),
                 // Кнопка WhatsApp
                 ListTile(
-                  leading: Icon(Icons.message, color: Colors.green),
+                  leading: Image.asset(
+                    "assets/whatsapp.png",
+                    height: 24,
+                  ),
                   title: const Text('Поделиться в WhatsApp'),
                   onTap: () {
-                    Navigator.pop(context);  // Закрыть диалог
-                    _shareContent(SocialPlatform.twitter);  // Поделиться в WhatsApp
+                    Navigator.pop(context); // Закрыть диалог
+                    _shareContent(
+                        SocialPlatform.whatsapp); // Поделиться в WhatsApp
                   },
                 ),
                 // Кнопка Facebook
@@ -152,8 +165,9 @@ class _QuizState extends State<Quiz> {
                   leading: Icon(Icons.facebook, color: Colors.blue),
                   title: const Text('Поделиться в Facebook'),
                   onTap: () {
-                    Navigator.pop(context);  // Закрыть диалог
-                    _shareContent(SocialPlatform.facebook);  // Поделиться в Facebook
+                    Navigator.pop(context); // Закрыть диалог
+                    _shareContent(
+                        SocialPlatform.facebook); // Поделиться в Facebook
                   },
                 ),
               ],
@@ -166,19 +180,20 @@ class _QuizState extends State<Quiz> {
 
   // Функция для отправки сообщения в выбранную соцсеть
   Future<void> _shareContent(SocialPlatform platform) async {
-    String shareMessage = 'Мой результат в тесте на шифрование с использованием  ${widget.quizType} шифра: $score/${questions.length}\n'
-        'На сколько баллов пройдешь ты?';
-
+    String shareMessage =
+        'Your score in ${widget.quizType} encryption is $score/${questions.length}';
 
     if (shareMessage.isNotEmpty) {
       await SocialSharingPlus.shareToSocialMedia(
-        platform,  // Выбираем нужную соцсеть
+        platform, // Выбираем нужную соцсеть
         shareMessage,
-        isOpenBrowser: true, // Открывать браузер, если приложение не установлено
+        isOpenBrowser: true,
+        // Открывать браузер, если приложение не установлено
         onAppNotInstalled: () {
           if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Приложение для обмена не установлено.')),
+              const SnackBar(
+                  content: Text('Приложение для обмена не установлено.')),
             );
           }
         },

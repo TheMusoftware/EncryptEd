@@ -24,8 +24,8 @@ class _HomeScreenState extends State<HomeScreen> {
       body: _pages[_currentIndex],
       bottomNavigationBar: CircleNavBar(
         activeIcons: const [
-          Icon(Icons.catching_pokemon),
-          Icon(Icons.settings),
+          Icon(Icons.home_outlined),
+          Icon(Icons.category_outlined),
         ],
         inactiveIcons: const [
           Text("Главная"),
