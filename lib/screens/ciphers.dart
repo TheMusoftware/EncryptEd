@@ -62,7 +62,7 @@ class CardExample extends StatelessWidget {
 
             const SizedBox(height: 1),
             CipherCard(
-              imagePath: 'assets/wheatstone.jpg',
+              imagePath: 'assets/wheatstone.jpg', //check
               title: 'Двойной квадрат Уинстона',
               description:
               'Метод изобретен в 1854 году.',
