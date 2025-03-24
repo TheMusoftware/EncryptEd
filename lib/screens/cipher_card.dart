@@ -71,16 +71,14 @@ class CipherCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 18,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Text(title,
+                      style: const TextStyle(
+                        fontSize: 18,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
                       overflow: TextOverflow.fade,
-                      maxLines: 2
-                  ),
+                      maxLines: 2),
                   const SizedBox(height: 6),
                   Expanded(
                     child: Text(

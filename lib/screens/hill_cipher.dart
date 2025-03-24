@@ -26,7 +26,8 @@ class HillCipherScreen extends StatelessWidget {
                 elevation: 10, // Тень для эффекта поднятия
                 shadowColor: Colors.purple.withOpacity(0.6),
                 child: Container(
-                  width: 200, // Уменьшаем ширину карточки
+                  width: 200,
+                  // Уменьшаем ширину карточки
                   height: 265,
                   decoration: BoxDecoration(
                     color: const Color(0xFF0D030E),
@@ -54,9 +55,8 @@ class HillCipherScreen extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               const Text(
-               'Шифр Хилла — метод симметричного шифрования, предложенный математиком Лестером Хиллом в 1929 году. '
-                   'Это один из первых методов блочного шифрования, использующий линейную алгебру и матрицы для шифрования текста.'
-              ),
+                  'Шифр Хилла — метод симметричного шифрования, предложенный математиком Лестером Хиллом в 1929 году. '
+                  'Это один из первых методов блочного шифрования, использующий линейную алгебру и матрицы для шифрования текста.'),
               const SizedBox(height: 20),
               Card(
                 shape: RoundedRectangleBorder(
@@ -65,7 +65,8 @@ class HillCipherScreen extends StatelessWidget {
                 elevation: 10, // Тень для эффекта поднятия
                 shadowColor: const Color(0xFFa9a8ab),
                 child: Container(
-                  width: 500, // Уменьшаем ширину карточки
+                  width: 500,
+                  // Уменьшаем ширину карточки
                   height: 113,
                   decoration: BoxDecoration(
                     color: const Color(0xFFFFFFFF),
@@ -93,8 +94,7 @@ class HillCipherScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               const Text(
-                'В шифре Хилла используется ключевая матрица, которая играет важную роль в шифровании и дешифровании текста. Она должна быть обратимой по модулю 26, а ее определитель не может быть равен нулю.'
-                    ,
+                'В шифре Хилла используется ключевая матрица, которая играет важную роль в шифровании и дешифровании текста. Она должна быть обратимой по модулю 26, а ее определитель не может быть равен нулю.',
               ),
               const SizedBox(height: 20),
               const Column(
@@ -106,7 +106,8 @@ class HillCipherScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 20), // Добавляем небольшой отступ между строками
+              const SizedBox(height: 20),
+              // Добавляем небольшой отступ между строками
               const Column(
                 children: [
                   Text(
@@ -118,8 +119,7 @@ class HillCipherScreen extends StatelessWidget {
               const Column(
                 children: [
                   Text(
-                      '1.Представим буквы в числовом виде (A = 0, B = 1, ..., Z = 25):\nS = 18, T = 19, U = 20, D = 3, E = 4, N = 13, T = 19, S = 18 в виде вектора:'
-                  ),
+                      '1.Представим буквы в числовом виде (A = 0, B = 1, ..., Z = 25):\nS = 18, T = 19, U = 20, D = 3, E = 4, N = 13, T = 19, S = 18 в виде вектора:'),
                 ],
               ),
               const SizedBox(height: 20),
@@ -131,7 +131,8 @@ class HillCipherScreen extends StatelessWidget {
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.purple.withOpacity(0.6), // Фиолетовая тень
+                          color: Colors.purple.withOpacity(0.6),
+                          // Фиолетовая тень
                           blurRadius: 12,
                           spreadRadius: 2,
                         ),
@@ -141,7 +142,8 @@ class HillCipherScreen extends StatelessWidget {
                       backgroundColor: Colors.purple.withOpacity(0.3),
                       child: Text(
                         ['S→18', 'T→19', 'U→20'][index],
-                        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 12),
                       ),
                     ),
                   );
@@ -155,24 +157,34 @@ class HillCipherScreen extends StatelessWidget {
                     alignment: Alignment.centerLeft, // Aligning to the left
                     child: Text(
                       '2. Разбить на биграммы буквы:', // Your text
-                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal), // Optional styling
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal), // Optional styling
                     ),
                   ),
                 ],
               ),
               SizedBox(height: 20),
               Column(
-                mainAxisAlignment: MainAxisAlignment.center, // Выравнивание по центру вертикально
-                crossAxisAlignment: CrossAxisAlignment.center, // Выравнивание по центру горизонтально
+                mainAxisAlignment: MainAxisAlignment.center,
+                // Выравнивание по центру вертикально
+                crossAxisAlignment: CrossAxisAlignment.center,
+                // Выравнивание по центру горизонтально
                 children: List.generate(4, (index) {
                   return Container(
-                    width: 100, // Ширина прямоугольника
-                    height: 30, // Высота прямоугольника
-                    alignment: Alignment.center, // Выравнивание текста по центру
-                    margin: const EdgeInsets.symmetric(vertical: 5), // Отступы между прямоугольниками
+                    width: 100,
+                    // Ширина прямоугольника
+                    height: 30,
+                    // Высота прямоугольника
+                    alignment: Alignment.center,
+                    // Выравнивание текста по центру
+                    margin: const EdgeInsets.symmetric(vertical: 5),
+                    // Отступы между прямоугольниками
                     decoration: BoxDecoration(
-                      color: Colors.white, // Фон прямоугольника
-                      borderRadius: BorderRadius.circular(10), // Скругление углов
+                      color: Colors.white,
+                      // Фон прямоугольника
+                      borderRadius: BorderRadius.circular(10),
+                      // Скругление углов
                       boxShadow: const [
                         BoxShadow(
                           color: Color(0xFFa9a8ab),
@@ -183,9 +195,18 @@ class HillCipherScreen extends StatelessWidget {
                       ],
                     ),
                     child: Text(
-                      ['(S, T) → (18, 19)', '(U, D) → (20, 3)', '(E, N) → (4, 13)', '(T, S) → (19, 18)'][index], // Текст внутри
-                      style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.black),
-                      textAlign: TextAlign.center, // Выравнивание текста по центру
+                      [
+                        '(S, T) → (18, 19)',
+                        '(U, D) → (20, 3)',
+                        '(E, N) → (4, 13)',
+                        '(T, S) → (19, 18)'
+                      ][index], // Текст внутри
+                      style: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                      textAlign:
+                          TextAlign.center, // Выравнивание текста по центру
                     ),
                   );
                 }),
@@ -193,9 +214,7 @@ class HillCipherScreen extends StatelessWidget {
               SizedBox(height: 20),
               const Column(
                 children: [
-                  Text(
-                      '3.  Умножить каждую биграмму на матрицу, '
-                  ),
+                  Text('3.  Умножить каждую биграмму на матрицу, '),
                 ],
               ),
               SizedBox(height: 10),
@@ -207,8 +226,10 @@ class HillCipherScreen extends StatelessWidget {
                 elevation: 10, // Тень для эффекта поднятия
                 shadowColor: Colors.purple.withOpacity(0.6),
                 child: Container(
-                  width: 292, // Соответствует ширине изображения
-                  height: 120, // Соответствует высоте изображения
+                  width: 292,
+                  // Соответствует ширине изображения
+                  height: 120,
+                  // Соответствует высоте изображения
                   decoration: BoxDecoration(
                     color: const Color(0xFF442F16),
                     borderRadius: BorderRadius.circular(15),
@@ -238,8 +259,7 @@ class HillCipherScreen extends StatelessWidget {
               const Column(
                 children: [
                   Text(
-                      '4.  Делим числа по модулю 26, переводим полученный результат из таблицы: '
-                  ),
+                      '4.  Делим числа по модулю 26, переводим полученный результат из таблицы: '),
                 ],
               ),
               SizedBox(height: 10),
@@ -251,8 +271,10 @@ class HillCipherScreen extends StatelessWidget {
                 elevation: 10, // Тень для эффекта поднятия
                 shadowColor: Colors.purple.withOpacity(0.6),
                 child: Container(
-                  width: 293, // Уменьшаем ширину контейнера
-                  height: 25, // Уменьшаем высоту контейнера
+                  width: 293,
+                  // Уменьшаем ширину контейнера
+                  height: 25,
+                  // Уменьшаем высоту контейнера
                   decoration: BoxDecoration(
                     color: const Color(0xFF442F16),
                     borderRadius: BorderRadius.circular(15),
@@ -281,9 +303,7 @@ class HillCipherScreen extends StatelessWidget {
 
               const Column(
                 children: [
-                  Text(
-                      '5.  Переведем значения в буквы, используя таблицу: '
-                  ),
+                  Text('5.  Переведем значения в буквы, используя таблицу: '),
                 ],
               ),
               SizedBox(height: 10),
@@ -295,8 +315,10 @@ class HillCipherScreen extends StatelessWidget {
                 elevation: 10, // Тень для эффекта поднятия
                 shadowColor: Colors.purple.withOpacity(0.6),
                 child: Container(
-                  width: 300, // Уменьшаем ширину контейнера
-                  height: 53, // Уменьшаем высоту контейнера
+                  width: 300,
+                  // Уменьшаем ширину контейнера
+                  height: 53,
+                  // Уменьшаем высоту контейнера
                   decoration: BoxDecoration(
                     color: const Color(0xFF442F16),
                     borderRadius: BorderRadius.circular(15),
@@ -324,15 +346,18 @@ class HillCipherScreen extends StatelessWidget {
               const SizedBox(height: 20),
 
               Row(
-                mainAxisAlignment: MainAxisAlignment.center, // Убираем равномерное распределение, центрируем
+                mainAxisAlignment: MainAxisAlignment.center,
+                // Убираем равномерное распределение, центрируем
                 children: List.generate(2, (index) {
                   return Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 25), // Уменьшаем расстояние между кружками
+                    margin: const EdgeInsets.symmetric(horizontal: 25),
+                    // Уменьшаем расстояние между кружками
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.purple.withOpacity(0.6), // Фиолетовая тень
+                          color: Colors.purple.withOpacity(0.6),
+                          // Фиолетовая тень
                           blurRadius: 12,
                           spreadRadius: 2,
                         ),
@@ -342,7 +367,8 @@ class HillCipherScreen extends StatelessWidget {
                       backgroundColor: Colors.purple.withOpacity(0.3),
                       child: Text(
                         ['Z→25', 'K→10'][index],
-                        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 12),
                       ),
                     ),
                   );
@@ -352,8 +378,7 @@ class HillCipherScreen extends StatelessWidget {
               const Column(
                 children: [
                   Text(
-                      'Далее необходимо провести аналогичные действия с другими биграммами и перевести полученные значения в символы.'
-                  ),
+                      'Далее необходимо провести аналогичные действия с другими биграммами и перевести полученные значения в символы.'),
                 ],
               ),
               SizedBox(height: 20),
@@ -371,17 +396,12 @@ class HillCipherScreen extends StatelessWidget {
                 children: [
                   Text(
                       '1. Шифр Хилла был частью криптографических методов, которые использовались до '
-                          'появления более сложных алгоритмов, таких как RSA и AES. '
-                          'Однако с развитием вычислительной мощности современных машин и криптографических исследований, '
-                          'шифр Хилла стал уязвимым к современным методам криптоанализа, таким как метод грубой силы.'
-                  ),
+                      'появления более сложных алгоритмов, таких как RSA и AES. '
+                      'Однако с развитием вычислительной мощности современных машин и криптографических исследований, '
+                      'шифр Хилла стал уязвимым к современным методам криптоанализа, таким как метод грубой силы.'),
                 ],
               ),
               const SizedBox(height: 20),
-
-
-
-
 
               const SizedBox(height: 20),
               Align(

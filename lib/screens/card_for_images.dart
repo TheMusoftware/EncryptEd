@@ -122,8 +122,7 @@ class CardMap extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            Quiz(quizType: title),
+                        builder: (context) => Quiz(quizType: title),
                       ),
                     );
                   },

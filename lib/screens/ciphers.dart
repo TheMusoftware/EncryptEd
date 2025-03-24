@@ -37,42 +37,42 @@ class CardExample extends StatelessWidget {
           children: [
             const SizedBox(height: 1),
             CipherCard(
-
               imagePath: 'assets/caesar.jpg',
               title: 'Шифр Цезаря',
               description:
-              'Один из наиболее древнейших методов шифрования (100 г. до н.э.)',
-              onTap: () => _navigateToDetails(context, const CaesarCipherScreen()),
+                  'Один из наиболее древнейших методов шифрования (100 г. до н.э.)',
+              onTap: () =>
+                  _navigateToDetails(context, const CaesarCipherScreen()),
             ),
-            const SizedBox(height: 1),  // уменьшено расстояние между карточками
+            const SizedBox(height: 1), // уменьшено расстояние между карточками
             CipherCard(
               imagePath: 'assets/vernam.png',
               title: 'Шифр Вернама',
-              description: 'Метод шифрования с использованием многоалфавитной замены.',
-              onTap: () => _navigateToDetails(context, const VernamCipherScreen()),
+              description:
+                  'Метод шифрования с использованием многоалфавитной замены.',
+              onTap: () =>
+                  _navigateToDetails(context, const VernamCipherScreen()),
             ),
-            const SizedBox(height: 1),  // уменьшено расстояние между карточками
+            const SizedBox(height: 1), // уменьшено расстояние между карточками
             CipherCard(
               imagePath: 'assets/hill.jpg',
               title: 'Шифр Хилла',
               description:
-              'Шифр Хилла – полиграммный шифр, основанный на умножении матриц.',
-              onTap: () => _navigateToDetails(context, const HillCipherScreen()),
+                  'Шифр Хилла – полиграммный шифр, основанный на умножении матриц.',
+              onTap: () =>
+                  _navigateToDetails(context, const HillCipherScreen()),
             ),
 
             const SizedBox(height: 1),
             CipherCard(
               imagePath: 'assets/wheatstone.jpg', //check
               title: 'Двойной квадрат Уинстона',
-              description:
-              'Метод изобретен в 1854 году.',
+              description: 'Метод изобретен в 1854 году.',
               onTap: () => _navigateToDetails(context, const DoubleSquare()),
             ),
-
           ],
         ),
       ),
     );
   }
 }
-
